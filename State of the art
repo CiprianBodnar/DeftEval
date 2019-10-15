@@ -6,3 +6,7 @@ results;
 • Related Articles and books;
 • Relevant links;
 • Resources and tools available
+
+
+
+Definition extraction has been a popular topic in NLP research for well more than a decade, but has been historically limited to well-defined, structured, and narrow conditions. In reality, natural language is messy, and messy data requires both complex solutions and data that reflects that reality. In this paper, we present a robust English corpus and annotation schema that allows us to explore the less straightforward examples of term-definition structures in free and semi-structured text.
