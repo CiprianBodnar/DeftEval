@@ -1,0 +1,1 @@
+The view of the project, in our case if there is no front end required we will used command line-ul as a view module.

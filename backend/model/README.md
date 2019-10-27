@@ -1,0 +1,1 @@
+This package contains all model that appeaars in project and will be used to represent data. Usualy there are POJO classes.
