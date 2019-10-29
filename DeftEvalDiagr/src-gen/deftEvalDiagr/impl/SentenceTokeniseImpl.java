@@ -4,12 +4,14 @@ package deftEvalDiagr.impl;
 
 import deftEvalDiagr.DefinitionMarker;
 import deftEvalDiagr.DeftEvalDiagrPackage;
+import deftEvalDiagr.FrequencyComputer;
 import deftEvalDiagr.SentenceTokenise;
 
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -33,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link deftEvalDiagr.impl.SentenceTokeniseImpl#getListOfSentence <em>List Of Sentence</em>}</li>
  *   <li>{@link deftEvalDiagr.impl.SentenceTokeniseImpl#getDefinitionmarker <em>Definitionmarker</em>}</li>
+ *   <li>{@link deftEvalDiagr.impl.SentenceTokeniseImpl#getFrequencycomputer <em>Frequencycomputer</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,6 +61,16 @@ public class SentenceTokeniseImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<DefinitionMarker> definitionmarker;
+
+	/**
+	 * The cached value of the '{@link #getFrequencycomputer() <em>Frequencycomputer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrequencycomputer()
+	 * @generated
+	 * @ordered
+	 */
+	protected FrequencyComputer frequencycomputer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,6 +125,50 @@ public class SentenceTokeniseImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
+	public FrequencyComputer getFrequencycomputer() {
+		if (frequencycomputer != null && frequencycomputer.eIsProxy()) {
+			InternalEObject oldFrequencycomputer = (InternalEObject) frequencycomputer;
+			frequencycomputer = (FrequencyComputer) eResolveProxy(oldFrequencycomputer);
+			if (frequencycomputer != oldFrequencycomputer) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DeftEvalDiagrPackage.SENTENCE_TOKENISE__FREQUENCYCOMPUTER, oldFrequencycomputer,
+							frequencycomputer));
+			}
+		}
+		return frequencycomputer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FrequencyComputer basicGetFrequencycomputer() {
+		return frequencycomputer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFrequencycomputer(FrequencyComputer newFrequencycomputer) {
+		FrequencyComputer oldFrequencycomputer = frequencycomputer;
+		frequencycomputer = newFrequencycomputer;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DeftEvalDiagrPackage.SENTENCE_TOKENISE__FREQUENCYCOMPUTER, oldFrequencycomputer,
+					frequencycomputer));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<String> tokenizeCorpus() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -155,6 +213,10 @@ public class SentenceTokeniseImpl extends MinimalEObjectImpl.Container implement
 			return getListOfSentence();
 		case DeftEvalDiagrPackage.SENTENCE_TOKENISE__DEFINITIONMARKER:
 			return getDefinitionmarker();
+		case DeftEvalDiagrPackage.SENTENCE_TOKENISE__FREQUENCYCOMPUTER:
+			if (resolve)
+				return getFrequencycomputer();
+			return basicGetFrequencycomputer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,6 +238,9 @@ public class SentenceTokeniseImpl extends MinimalEObjectImpl.Container implement
 			getDefinitionmarker().clear();
 			getDefinitionmarker().addAll((Collection<? extends DefinitionMarker>) newValue);
 			return;
+		case DeftEvalDiagrPackage.SENTENCE_TOKENISE__FREQUENCYCOMPUTER:
+			setFrequencycomputer((FrequencyComputer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -194,6 +259,9 @@ public class SentenceTokeniseImpl extends MinimalEObjectImpl.Container implement
 		case DeftEvalDiagrPackage.SENTENCE_TOKENISE__DEFINITIONMARKER:
 			getDefinitionmarker().clear();
 			return;
+		case DeftEvalDiagrPackage.SENTENCE_TOKENISE__FREQUENCYCOMPUTER:
+			setFrequencycomputer((FrequencyComputer) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -210,6 +278,8 @@ public class SentenceTokeniseImpl extends MinimalEObjectImpl.Container implement
 			return listOfSentence != null && !listOfSentence.isEmpty();
 		case DeftEvalDiagrPackage.SENTENCE_TOKENISE__DEFINITIONMARKER:
 			return definitionmarker != null && !definitionmarker.isEmpty();
+		case DeftEvalDiagrPackage.SENTENCE_TOKENISE__FREQUENCYCOMPUTER:
+			return frequencycomputer != null;
 		}
 		return super.eIsSet(featureID);
 	}

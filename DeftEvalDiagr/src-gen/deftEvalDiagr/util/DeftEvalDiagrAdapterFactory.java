@@ -97,6 +97,16 @@ public class DeftEvalDiagrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseFrequencyComputer(FrequencyComputer object) {
+			return createFrequencyComputerAdapter();
+		}
+
+		@Override
+		public Adapter caseResultSender(ResultSender object) {
+			return createResultSenderAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -196,6 +206,34 @@ public class DeftEvalDiagrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTypeOfAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link deftEvalDiagr.FrequencyComputer <em>Frequency Computer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see deftEvalDiagr.FrequencyComputer
+	 * @generated
+	 */
+	public Adapter createFrequencyComputerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link deftEvalDiagr.ResultSender <em>Result Sender</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see deftEvalDiagr.ResultSender
+	 * @generated
+	 */
+	public Adapter createResultSenderAdapter() {
 		return null;
 	}
 

@@ -2,10 +2,8 @@
  */
 package deftEvalDiagr.impl;
 
-import deftEvalDiagr.Asociator;
 import deftEvalDiagr.DeftEvalDiagrPackage;
-import deftEvalDiagr.TaggedDefinition;
-import deftEvalDiagr.TypeOfAssociation;
+import deftEvalDiagr.ResultSender;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -21,34 +19,34 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Asociator</b></em>'.
+ * An implementation of the model object '<em><b>Result Sender</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link deftEvalDiagr.impl.AsociatorImpl#getListOfDefinition <em>List Of Definition</em>}</li>
+ *   <li>{@link deftEvalDiagr.impl.ResultSenderImpl#getResultDefinitions <em>Result Definitions</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asociator {
+public abstract class ResultSenderImpl extends MinimalEObjectImpl.Container implements ResultSender {
 	/**
-	 * The cached value of the '{@link #getListOfDefinition() <em>List Of Definition</em>}' attribute list.
+	 * The cached value of the '{@link #getResultDefinitions() <em>Result Definitions</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getListOfDefinition()
+	 * @see #getResultDefinitions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> listOfDefinition;
+	protected EList<String> resultDefinitions;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AsociatorImpl() {
+	protected ResultSenderImpl() {
 		super();
 	}
 
@@ -59,7 +57,7 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DeftEvalDiagrPackage.Literals.ASOCIATOR;
+		return DeftEvalDiagrPackage.Literals.RESULT_SENDER;
 	}
 
 	/**
@@ -68,12 +66,12 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	 * @generated
 	 */
 	@Override
-	public EList<String> getListOfDefinition() {
-		if (listOfDefinition == null) {
-			listOfDefinition = new EDataTypeUniqueEList<String>(String.class, this,
-					DeftEvalDiagrPackage.ASOCIATOR__LIST_OF_DEFINITION);
+	public EList<String> getResultDefinitions() {
+		if (resultDefinitions == null) {
+			resultDefinitions = new EDataTypeUniqueEList<String>(String.class, this,
+					DeftEvalDiagrPackage.RESULT_SENDER__RESULT_DEFINITIONS);
 		}
-		return listOfDefinition;
+		return resultDefinitions;
 	}
 
 	/**
@@ -82,19 +80,7 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	 * @generated
 	 */
 	@Override
-	public EList<TaggedDefinition> associteDefinition() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TypeOfAssociation typeAssociation() {
+	public EList<String> sendResult() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -108,8 +94,8 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DeftEvalDiagrPackage.ASOCIATOR__LIST_OF_DEFINITION:
-			return getListOfDefinition();
+		case DeftEvalDiagrPackage.RESULT_SENDER__RESULT_DEFINITIONS:
+			return getResultDefinitions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,9 +109,9 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DeftEvalDiagrPackage.ASOCIATOR__LIST_OF_DEFINITION:
-			getListOfDefinition().clear();
-			getListOfDefinition().addAll((Collection<? extends String>) newValue);
+		case DeftEvalDiagrPackage.RESULT_SENDER__RESULT_DEFINITIONS:
+			getResultDefinitions().clear();
+			getResultDefinitions().addAll((Collection<? extends String>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,8 +125,8 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DeftEvalDiagrPackage.ASOCIATOR__LIST_OF_DEFINITION:
-			getListOfDefinition().clear();
+		case DeftEvalDiagrPackage.RESULT_SENDER__RESULT_DEFINITIONS:
+			getResultDefinitions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -154,8 +140,8 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DeftEvalDiagrPackage.ASOCIATOR__LIST_OF_DEFINITION:
-			return listOfDefinition != null && !listOfDefinition.isEmpty();
+		case DeftEvalDiagrPackage.RESULT_SENDER__RESULT_DEFINITIONS:
+			return resultDefinitions != null && !resultDefinitions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -168,10 +154,8 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case DeftEvalDiagrPackage.ASOCIATOR___ASSOCITE_DEFINITION:
-			return associteDefinition();
-		case DeftEvalDiagrPackage.ASOCIATOR___TYPE_ASSOCIATION:
-			return typeAssociation();
+		case DeftEvalDiagrPackage.RESULT_SENDER___SEND_RESULT:
+			return sendResult();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -187,10 +171,10 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (listOfDefinition: ");
-		result.append(listOfDefinition);
+		result.append(" (resultDefinitions: ");
+		result.append(resultDefinitions);
 		result.append(')');
 		return result.toString();
 	}
 
-} //AsociatorImpl
+} //ResultSenderImpl

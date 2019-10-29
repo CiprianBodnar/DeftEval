@@ -56,8 +56,6 @@ public class DeftEvalDiagrFactoryImpl extends EFactoryImpl implements DeftEvalDi
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case DeftEvalDiagrPackage.CORPUS:
-			return createCorpus();
 		case DeftEvalDiagrPackage.SENTENCE_TOKENISE:
 			return createSentenceTokenise();
 		case DeftEvalDiagrPackage.DEFINITION_MARKER:
@@ -68,20 +66,11 @@ public class DeftEvalDiagrFactoryImpl extends EFactoryImpl implements DeftEvalDi
 			return createAsociator();
 		case DeftEvalDiagrPackage.TYPE_OF_ASSOCIATION:
 			return createTypeOfAssociation();
+		case DeftEvalDiagrPackage.FREQUENCY_COMPUTER:
+			return createFrequencyComputer();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Corpus createCorpus() {
-		CorpusImpl corpus = new CorpusImpl();
-		return corpus;
 	}
 
 	/**
@@ -137,6 +126,17 @@ public class DeftEvalDiagrFactoryImpl extends EFactoryImpl implements DeftEvalDi
 	public TypeOfAssociation createTypeOfAssociation() {
 		TypeOfAssociationImpl typeOfAssociation = new TypeOfAssociationImpl();
 		return typeOfAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public FrequencyComputer createFrequencyComputer() {
+		FrequencyComputerImpl frequencyComputer = new FrequencyComputerImpl();
+		return frequencyComputer;
 	}
 
 	/**

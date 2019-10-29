@@ -2,13 +2,16 @@
  */
 package deftEvalDiagr.impl;
 
-import deftEvalDiagr.DefinitionMarker;
 import deftEvalDiagr.DeftEvalDiagrPackage;
+import deftEvalDiagr.ResultSender;
 import deftEvalDiagr.TaggedDefinition;
 
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -17,6 +20,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +36,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link deftEvalDiagr.impl.TaggedDefinitionImpl#getStartTag <em>Start Tag</em>}</li>
  *   <li>{@link deftEvalDiagr.impl.TaggedDefinitionImpl#getInsideTag <em>Inside Tag</em>}</li>
  *   <li>{@link deftEvalDiagr.impl.TaggedDefinitionImpl#getOutsideTag <em>Outside Tag</em>}</li>
- *   <li>{@link deftEvalDiagr.impl.TaggedDefinitionImpl#getDefinitionmarker <em>Definitionmarker</em>}</li>
+ *   <li>{@link deftEvalDiagr.impl.TaggedDefinitionImpl#getResultsender <em>Resultsender</em>}</li>
  * </ul>
  *
  * @generated
@@ -117,14 +123,14 @@ public class TaggedDefinitionImpl extends MinimalEObjectImpl.Container implement
 	protected String outsideTag = OUTSIDE_TAG_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDefinitionmarker() <em>Definitionmarker</em>}' reference.
+	 * The cached value of the '{@link #getResultsender() <em>Resultsender</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDefinitionmarker()
+	 * @see #getResultsender()
 	 * @generated
 	 * @ordered
 	 */
-	protected DefinitionMarker definitionmarker;
+	protected EList<ResultSender> resultsender;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -247,41 +253,12 @@ public class TaggedDefinitionImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public DefinitionMarker getDefinitionmarker() {
-		if (definitionmarker != null && definitionmarker.eIsProxy()) {
-			InternalEObject oldDefinitionmarker = (InternalEObject) definitionmarker;
-			definitionmarker = (DefinitionMarker) eResolveProxy(oldDefinitionmarker);
-			if (definitionmarker != oldDefinitionmarker) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DeftEvalDiagrPackage.TAGGED_DEFINITION__DEFINITIONMARKER, oldDefinitionmarker,
-							definitionmarker));
-			}
+	public EList<ResultSender> getResultsender() {
+		if (resultsender == null) {
+			resultsender = new EObjectContainmentEList<ResultSender>(ResultSender.class, this,
+					DeftEvalDiagrPackage.TAGGED_DEFINITION__RESULTSENDER);
 		}
-		return definitionmarker;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DefinitionMarker basicGetDefinitionmarker() {
-		return definitionmarker;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDefinitionmarker(DefinitionMarker newDefinitionmarker) {
-		DefinitionMarker oldDefinitionmarker = definitionmarker;
-		definitionmarker = newDefinitionmarker;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DeftEvalDiagrPackage.TAGGED_DEFINITION__DEFINITIONMARKER, oldDefinitionmarker, definitionmarker));
+		return resultsender;
 	}
 
 	/**
@@ -302,6 +279,20 @@ public class TaggedDefinitionImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case DeftEvalDiagrPackage.TAGGED_DEFINITION__RESULTSENDER:
+			return ((InternalEList<?>) getResultsender()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case DeftEvalDiagrPackage.TAGGED_DEFINITION__SENTENCE:
@@ -312,10 +303,8 @@ public class TaggedDefinitionImpl extends MinimalEObjectImpl.Container implement
 			return getInsideTag();
 		case DeftEvalDiagrPackage.TAGGED_DEFINITION__OUTSIDE_TAG:
 			return getOutsideTag();
-		case DeftEvalDiagrPackage.TAGGED_DEFINITION__DEFINITIONMARKER:
-			if (resolve)
-				return getDefinitionmarker();
-			return basicGetDefinitionmarker();
+		case DeftEvalDiagrPackage.TAGGED_DEFINITION__RESULTSENDER:
+			return getResultsender();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -325,6 +314,7 @@ public class TaggedDefinitionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -340,8 +330,9 @@ public class TaggedDefinitionImpl extends MinimalEObjectImpl.Container implement
 		case DeftEvalDiagrPackage.TAGGED_DEFINITION__OUTSIDE_TAG:
 			setOutsideTag((String) newValue);
 			return;
-		case DeftEvalDiagrPackage.TAGGED_DEFINITION__DEFINITIONMARKER:
-			setDefinitionmarker((DefinitionMarker) newValue);
+		case DeftEvalDiagrPackage.TAGGED_DEFINITION__RESULTSENDER:
+			getResultsender().clear();
+			getResultsender().addAll((Collection<? extends ResultSender>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -367,8 +358,8 @@ public class TaggedDefinitionImpl extends MinimalEObjectImpl.Container implement
 		case DeftEvalDiagrPackage.TAGGED_DEFINITION__OUTSIDE_TAG:
 			setOutsideTag(OUTSIDE_TAG_EDEFAULT);
 			return;
-		case DeftEvalDiagrPackage.TAGGED_DEFINITION__DEFINITIONMARKER:
-			setDefinitionmarker((DefinitionMarker) null);
+		case DeftEvalDiagrPackage.TAGGED_DEFINITION__RESULTSENDER:
+			getResultsender().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -390,8 +381,8 @@ public class TaggedDefinitionImpl extends MinimalEObjectImpl.Container implement
 			return INSIDE_TAG_EDEFAULT == null ? insideTag != null : !INSIDE_TAG_EDEFAULT.equals(insideTag);
 		case DeftEvalDiagrPackage.TAGGED_DEFINITION__OUTSIDE_TAG:
 			return OUTSIDE_TAG_EDEFAULT == null ? outsideTag != null : !OUTSIDE_TAG_EDEFAULT.equals(outsideTag);
-		case DeftEvalDiagrPackage.TAGGED_DEFINITION__DEFINITIONMARKER:
-			return definitionmarker != null;
+		case DeftEvalDiagrPackage.TAGGED_DEFINITION__RESULTSENDER:
+			return resultsender != null && !resultsender.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

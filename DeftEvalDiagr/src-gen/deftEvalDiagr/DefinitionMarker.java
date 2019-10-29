@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link deftEvalDiagr.DefinitionMarker#getSentence <em>Sentence</em>}</li>
+ *   <li>{@link deftEvalDiagr.DefinitionMarker#getTaggeddefinition <em>Taggeddefinition</em>}</li>
+ *   <li>{@link deftEvalDiagr.DefinitionMarker#getAsociator <em>Asociator</em>}</li>
  * </ul>
  *
  * @see deftEvalDiagr.DeftEvalDiagrPackage#getDefinitionMarker()
@@ -42,6 +44,50 @@ public interface DefinitionMarker extends EObject {
 	 * @generated
 	 */
 	void setSentence(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Taggeddefinition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Taggeddefinition</em>' reference.
+	 * @see #setTaggeddefinition(TaggedDefinition)
+	 * @see deftEvalDiagr.DeftEvalDiagrPackage#getDefinitionMarker_Taggeddefinition()
+	 * @model
+	 * @generated
+	 */
+	TaggedDefinition getTaggeddefinition();
+
+	/**
+	 * Sets the value of the '{@link deftEvalDiagr.DefinitionMarker#getTaggeddefinition <em>Taggeddefinition</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Taggeddefinition</em>' reference.
+	 * @see #getTaggeddefinition()
+	 * @generated
+	 */
+	void setTaggeddefinition(TaggedDefinition value);
+
+	/**
+	 * Returns the value of the '<em><b>Asociator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Asociator</em>' reference.
+	 * @see #setAsociator(Asociator)
+	 * @see deftEvalDiagr.DeftEvalDiagrPackage#getDefinitionMarker_Asociator()
+	 * @model
+	 * @generated
+	 */
+	Asociator getAsociator();
+
+	/**
+	 * Sets the value of the '{@link deftEvalDiagr.DefinitionMarker#getAsociator <em>Asociator</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Asociator</em>' reference.
+	 * @see #getAsociator()
+	 * @generated
+	 */
+	void setAsociator(Asociator value);
 
 	/**
 	 * <!-- begin-user-doc -->

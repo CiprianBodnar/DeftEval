@@ -110,6 +110,20 @@ public class DeftEvalDiagrSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case DeftEvalDiagrPackage.FREQUENCY_COMPUTER: {
+			FrequencyComputer frequencyComputer = (FrequencyComputer) theEObject;
+			T result = caseFrequencyComputer(frequencyComputer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DeftEvalDiagrPackage.RESULT_SENDER: {
+			ResultSender resultSender = (ResultSender) theEObject;
+			T result = caseResultSender(resultSender);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -202,6 +216,36 @@ public class DeftEvalDiagrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTypeOfAssociation(TypeOfAssociation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Frequency Computer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Frequency Computer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFrequencyComputer(FrequencyComputer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Result Sender</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Result Sender</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResultSender(ResultSender object) {
 		return null;
 	}
 

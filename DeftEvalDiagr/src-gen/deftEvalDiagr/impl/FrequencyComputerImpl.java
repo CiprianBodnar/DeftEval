@@ -2,53 +2,62 @@
  */
 package deftEvalDiagr.impl;
 
-import deftEvalDiagr.Asociator;
+import deftEvalDiagr.Corpus;
 import deftEvalDiagr.DeftEvalDiagrPackage;
-import deftEvalDiagr.TaggedDefinition;
-import deftEvalDiagr.TypeOfAssociation;
+import deftEvalDiagr.FrequencyComputer;
+import deftEvalDiagr.ResultSender;
 
 import java.lang.reflect.InvocationTargetException;
 
-import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Asociator</b></em>'.
+ * An implementation of the model object '<em><b>Frequency Computer</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link deftEvalDiagr.impl.AsociatorImpl#getListOfDefinition <em>List Of Definition</em>}</li>
+ *   <li>{@link deftEvalDiagr.impl.FrequencyComputerImpl#getSentence <em>Sentence</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asociator {
+public class FrequencyComputerImpl extends MinimalEObjectImpl.Container implements FrequencyComputer {
 	/**
-	 * The cached value of the '{@link #getListOfDefinition() <em>List Of Definition</em>}' attribute list.
+	 * The default value of the '{@link #getSentence() <em>Sentence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getListOfDefinition()
+	 * @see #getSentence()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> listOfDefinition;
+	protected static final String SENTENCE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSentence() <em>Sentence</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSentence()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sentence = SENTENCE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AsociatorImpl() {
+	protected FrequencyComputerImpl() {
 		super();
 	}
 
@@ -59,7 +68,7 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DeftEvalDiagrPackage.Literals.ASOCIATOR;
+		return DeftEvalDiagrPackage.Literals.FREQUENCY_COMPUTER;
 	}
 
 	/**
@@ -68,12 +77,8 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	 * @generated
 	 */
 	@Override
-	public EList<String> getListOfDefinition() {
-		if (listOfDefinition == null) {
-			listOfDefinition = new EDataTypeUniqueEList<String>(String.class, this,
-					DeftEvalDiagrPackage.ASOCIATOR__LIST_OF_DEFINITION);
-		}
-		return listOfDefinition;
+	public String getSentence() {
+		return sentence;
 	}
 
 	/**
@@ -82,7 +87,21 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	 * @generated
 	 */
 	@Override
-	public EList<TaggedDefinition> associteDefinition() {
+	public void setSentence(String newSentence) {
+		String oldSentence = sentence;
+		sentence = newSentence;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DeftEvalDiagrPackage.FREQUENCY_COMPUTER__SENTENCE,
+					oldSentence, sentence));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<String> frequencyList() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -94,7 +113,19 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	 * @generated
 	 */
 	@Override
-	public TypeOfAssociation typeAssociation() {
+	public Corpus dictionary() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResultSender frequencies() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -108,8 +139,8 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DeftEvalDiagrPackage.ASOCIATOR__LIST_OF_DEFINITION:
-			return getListOfDefinition();
+		case DeftEvalDiagrPackage.FREQUENCY_COMPUTER__SENTENCE:
+			return getSentence();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,13 +150,11 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DeftEvalDiagrPackage.ASOCIATOR__LIST_OF_DEFINITION:
-			getListOfDefinition().clear();
-			getListOfDefinition().addAll((Collection<? extends String>) newValue);
+		case DeftEvalDiagrPackage.FREQUENCY_COMPUTER__SENTENCE:
+			setSentence((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,8 +168,8 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DeftEvalDiagrPackage.ASOCIATOR__LIST_OF_DEFINITION:
-			getListOfDefinition().clear();
+		case DeftEvalDiagrPackage.FREQUENCY_COMPUTER__SENTENCE:
+			setSentence(SENTENCE_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -154,8 +183,8 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DeftEvalDiagrPackage.ASOCIATOR__LIST_OF_DEFINITION:
-			return listOfDefinition != null && !listOfDefinition.isEmpty();
+		case DeftEvalDiagrPackage.FREQUENCY_COMPUTER__SENTENCE:
+			return SENTENCE_EDEFAULT == null ? sentence != null : !SENTENCE_EDEFAULT.equals(sentence);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -168,10 +197,12 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case DeftEvalDiagrPackage.ASOCIATOR___ASSOCITE_DEFINITION:
-			return associteDefinition();
-		case DeftEvalDiagrPackage.ASOCIATOR___TYPE_ASSOCIATION:
-			return typeAssociation();
+		case DeftEvalDiagrPackage.FREQUENCY_COMPUTER___FREQUENCY_LIST:
+			return frequencyList();
+		case DeftEvalDiagrPackage.FREQUENCY_COMPUTER___DICTIONARY:
+			return dictionary();
+		case DeftEvalDiagrPackage.FREQUENCY_COMPUTER___FREQUENCIES:
+			return frequencies();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -187,10 +218,10 @@ public class AsociatorImpl extends MinimalEObjectImpl.Container implements Asoci
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (listOfDefinition: ");
-		result.append(listOfDefinition);
+		result.append(" (sentence: ");
+		result.append(sentence);
 		result.append(')');
 		return result.toString();
 	}
 
-} //AsociatorImpl
+} //FrequencyComputerImpl

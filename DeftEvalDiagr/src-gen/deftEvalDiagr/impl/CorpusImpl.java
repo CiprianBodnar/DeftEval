@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class CorpusImpl extends MinimalEObjectImpl.Container implements Corpus {
+public abstract class CorpusImpl extends MinimalEObjectImpl.Container implements Corpus {
 	/**
 	 * The default value of the '{@link #getInputText() <em>Input Text</em>}' attribute.
 	 * <!-- begin-user-doc -->

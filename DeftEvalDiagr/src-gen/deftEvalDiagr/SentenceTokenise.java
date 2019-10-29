@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link deftEvalDiagr.SentenceTokenise#getListOfSentence <em>List Of Sentence</em>}</li>
  *   <li>{@link deftEvalDiagr.SentenceTokenise#getDefinitionmarker <em>Definitionmarker</em>}</li>
+ *   <li>{@link deftEvalDiagr.SentenceTokenise#getFrequencycomputer <em>Frequencycomputer</em>}</li>
  * </ul>
  *
  * @see deftEvalDiagr.DeftEvalDiagrPackage#getSentenceTokenise()
@@ -47,6 +48,28 @@ public interface SentenceTokenise extends EObject {
 	 * @generated
 	 */
 	EList<DefinitionMarker> getDefinitionmarker();
+
+	/**
+	 * Returns the value of the '<em><b>Frequencycomputer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Frequencycomputer</em>' reference.
+	 * @see #setFrequencycomputer(FrequencyComputer)
+	 * @see deftEvalDiagr.DeftEvalDiagrPackage#getSentenceTokenise_Frequencycomputer()
+	 * @model
+	 * @generated
+	 */
+	FrequencyComputer getFrequencycomputer();
+
+	/**
+	 * Sets the value of the '{@link deftEvalDiagr.SentenceTokenise#getFrequencycomputer <em>Frequencycomputer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Frequencycomputer</em>' reference.
+	 * @see #getFrequencycomputer()
+	 * @generated
+	 */
+	void setFrequencycomputer(FrequencyComputer value);
 
 	/**
 	 * <!-- begin-user-doc -->

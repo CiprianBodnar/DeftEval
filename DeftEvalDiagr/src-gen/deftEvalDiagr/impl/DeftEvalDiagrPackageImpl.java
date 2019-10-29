@@ -7,6 +7,8 @@ import deftEvalDiagr.Corpus;
 import deftEvalDiagr.DefinitionMarker;
 import deftEvalDiagr.DeftEvalDiagrFactory;
 import deftEvalDiagr.DeftEvalDiagrPackage;
+import deftEvalDiagr.FrequencyComputer;
+import deftEvalDiagr.ResultSender;
 import deftEvalDiagr.SentenceTokenise;
 import deftEvalDiagr.TaggedDefinition;
 import deftEvalDiagr.TypeOfAssociation;
@@ -67,6 +69,20 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 	 * @generated
 	 */
 	private EClass typeOfAssociationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass frequencyComputerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass resultSenderEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -218,6 +234,16 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 	 * @generated
 	 */
 	@Override
+	public EReference getSentenceTokenise_Frequencycomputer() {
+		return (EReference) sentenceTokeniseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getSentenceTokenise__TokenizeCorpus() {
 		return sentenceTokeniseEClass.getEOperations().get(0);
 	}
@@ -250,6 +276,26 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 	@Override
 	public EAttribute getDefinitionMarker_Sentence() {
 		return (EAttribute) definitionMarkerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDefinitionMarker_Taggeddefinition() {
+		return (EReference) definitionMarkerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDefinitionMarker_Asociator() {
+		return (EReference) definitionMarkerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -338,7 +384,7 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 	 * @generated
 	 */
 	@Override
-	public EReference getTaggedDefinition_Definitionmarker() {
+	public EReference getTaggedDefinition_Resultsender() {
 		return (EReference) taggedDefinitionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -370,16 +416,6 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 	@Override
 	public EAttribute getAsociator_ListOfDefinition() {
 		return (EAttribute) asociatorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAsociator_Definitionmarker() {
-		return (EReference) asociatorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -428,6 +464,86 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 	 * @generated
 	 */
 	@Override
+	public EClass getFrequencyComputer() {
+		return frequencyComputerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFrequencyComputer_Sentence() {
+		return (EAttribute) frequencyComputerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrequencyComputer__FrequencyList() {
+		return frequencyComputerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrequencyComputer__Dictionary() {
+		return frequencyComputerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getFrequencyComputer__Frequencies() {
+		return frequencyComputerEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getResultSender() {
+		return resultSenderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getResultSender_ResultDefinitions() {
+		return (EAttribute) resultSenderEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getResultSender__SendResult() {
+		return resultSenderEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public DeftEvalDiagrFactory getDeftEvalDiagrFactory() {
 		return (DeftEvalDiagrFactory) getEFactoryInstance();
 	}
@@ -461,11 +577,14 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 		sentenceTokeniseEClass = createEClass(SENTENCE_TOKENISE);
 		createEAttribute(sentenceTokeniseEClass, SENTENCE_TOKENISE__LIST_OF_SENTENCE);
 		createEReference(sentenceTokeniseEClass, SENTENCE_TOKENISE__DEFINITIONMARKER);
+		createEReference(sentenceTokeniseEClass, SENTENCE_TOKENISE__FREQUENCYCOMPUTER);
 		createEOperation(sentenceTokeniseEClass, SENTENCE_TOKENISE___TOKENIZE_CORPUS);
 		createEOperation(sentenceTokeniseEClass, SENTENCE_TOKENISE___GET_SENTENCE);
 
 		definitionMarkerEClass = createEClass(DEFINITION_MARKER);
 		createEAttribute(definitionMarkerEClass, DEFINITION_MARKER__SENTENCE);
+		createEReference(definitionMarkerEClass, DEFINITION_MARKER__TAGGEDDEFINITION);
+		createEReference(definitionMarkerEClass, DEFINITION_MARKER__ASOCIATOR);
 		createEOperation(definitionMarkerEClass, DEFINITION_MARKER___IS_DEFINITION);
 		createEOperation(definitionMarkerEClass, DEFINITION_MARKER___TAG_SENTENCE);
 		createEOperation(definitionMarkerEClass, DEFINITION_MARKER___GET_TAGGED_DEFINITION);
@@ -475,17 +594,26 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 		createEAttribute(taggedDefinitionEClass, TAGGED_DEFINITION__START_TAG);
 		createEAttribute(taggedDefinitionEClass, TAGGED_DEFINITION__INSIDE_TAG);
 		createEAttribute(taggedDefinitionEClass, TAGGED_DEFINITION__OUTSIDE_TAG);
-		createEReference(taggedDefinitionEClass, TAGGED_DEFINITION__DEFINITIONMARKER);
+		createEReference(taggedDefinitionEClass, TAGGED_DEFINITION__RESULTSENDER);
 		createEOperation(taggedDefinitionEClass, TAGGED_DEFINITION___SENTENCE_TAGGER);
 
 		asociatorEClass = createEClass(ASOCIATOR);
 		createEAttribute(asociatorEClass, ASOCIATOR__LIST_OF_DEFINITION);
-		createEReference(asociatorEClass, ASOCIATOR__DEFINITIONMARKER);
 		createEOperation(asociatorEClass, ASOCIATOR___ASSOCITE_DEFINITION);
 		createEOperation(asociatorEClass, ASOCIATOR___TYPE_ASSOCIATION);
 
 		typeOfAssociationEClass = createEClass(TYPE_OF_ASSOCIATION);
 		createEAttribute(typeOfAssociationEClass, TYPE_OF_ASSOCIATION__TYPE_ASSOCIATION);
+
+		frequencyComputerEClass = createEClass(FREQUENCY_COMPUTER);
+		createEAttribute(frequencyComputerEClass, FREQUENCY_COMPUTER__SENTENCE);
+		createEOperation(frequencyComputerEClass, FREQUENCY_COMPUTER___FREQUENCY_LIST);
+		createEOperation(frequencyComputerEClass, FREQUENCY_COMPUTER___DICTIONARY);
+		createEOperation(frequencyComputerEClass, FREQUENCY_COMPUTER___FREQUENCIES);
+
+		resultSenderEClass = createEClass(RESULT_SENDER);
+		createEAttribute(resultSenderEClass, RESULT_SENDER__RESULT_DEFINITIONS);
+		createEOperation(resultSenderEClass, RESULT_SENDER___SEND_RESULT);
 	}
 
 	/**
@@ -520,7 +648,7 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 		typeOfAssociationEClass.getESuperTypes().add(this.getAsociator());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(corpusEClass, Corpus.class, "Corpus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(corpusEClass, Corpus.class, "Corpus", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCorpus_InputText(), ecorePackage.getEString(), "inputText", null, 0, 1, Corpus.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -541,6 +669,9 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 		initEReference(getSentenceTokenise_Definitionmarker(), this.getDefinitionMarker(), null, "definitionmarker",
 				null, 0, -1, SentenceTokenise.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSentenceTokenise_Frequencycomputer(), this.getFrequencyComputer(), null, "frequencycomputer",
+				null, 0, 1, SentenceTokenise.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getSentenceTokenise__TokenizeCorpus(), ecorePackage.getEString(), "tokenizeCorpus", 0, -1,
 				IS_UNIQUE, IS_ORDERED);
@@ -553,6 +684,12 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 		initEAttribute(getDefinitionMarker_Sentence(), ecorePackage.getEString(), "sentence", null, 0, 1,
 				DefinitionMarker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEReference(getDefinitionMarker_Taggeddefinition(), this.getTaggedDefinition(), null, "taggeddefinition",
+				null, 0, 1, DefinitionMarker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDefinitionMarker_Asociator(), this.getAsociator(), null, "asociator", null, 0, 1,
+				DefinitionMarker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getDefinitionMarker__IsDefinition(), ecorePackage.getEBoolean(), "isDefinition", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
@@ -577,9 +714,9 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 		initEAttribute(getTaggedDefinition_OutsideTag(), ecorePackage.getEString(), "outsideTag", null, 0, 1,
 				TaggedDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getTaggedDefinition_Definitionmarker(), this.getDefinitionMarker(), null, "definitionmarker",
-				null, 0, 1, TaggedDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTaggedDefinition_Resultsender(), this.getResultSender(), null, "resultsender", null, 0, -1,
+				TaggedDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getTaggedDefinition__SentenceTagger(), ecorePackage.getEString(), "sentenceTagger", 0, 1,
 				IS_UNIQUE, IS_ORDERED);
@@ -589,9 +726,6 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 		initEAttribute(getAsociator_ListOfDefinition(), ecorePackage.getEString(), "listOfDefinition", null, 0, -1,
 				Asociator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getAsociator_Definitionmarker(), this.getDefinitionMarker(), null, "definitionmarker", null, 0,
-				1, Asociator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAsociator__AssociteDefinition(), this.getTaggedDefinition(), "associteDefinition", 0, -1,
 				IS_UNIQUE, IS_ORDERED);
@@ -604,6 +738,29 @@ public class DeftEvalDiagrPackageImpl extends EPackageImpl implements DeftEvalDi
 		initEAttribute(getTypeOfAssociation_TypeAssociation(), ecorePackage.getEString(), "typeAssociation", null, 0,
 				-1, TypeOfAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(frequencyComputerEClass, FrequencyComputer.class, "FrequencyComputer", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFrequencyComputer_Sentence(), ecorePackage.getEString(), "sentence", null, 0, 1,
+				FrequencyComputer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getFrequencyComputer__FrequencyList(), ecorePackage.getEString(), "frequencyList", 0, -1,
+				IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getFrequencyComputer__Dictionary(), this.getCorpus(), "dictionary", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getFrequencyComputer__Frequencies(), this.getResultSender(), "frequencies", 0, 1, IS_UNIQUE,
+				IS_ORDERED);
+
+		initEClass(resultSenderEClass, ResultSender.class, "ResultSender", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getResultSender_ResultDefinitions(), ecorePackage.getEString(), "resultDefinitions", null, 0, -1,
+				ResultSender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getResultSender__SendResult(), ecorePackage.getEString(), "sendResult", 0, -1, IS_UNIQUE,
+				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

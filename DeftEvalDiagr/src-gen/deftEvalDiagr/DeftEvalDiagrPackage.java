@@ -150,13 +150,22 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	int SENTENCE_TOKENISE__DEFINITIONMARKER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Frequencycomputer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENTENCE_TOKENISE__FREQUENCYCOMPUTER = 2;
+
+	/**
 	 * The number of structural features of the '<em>Sentence Tokenise</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENTENCE_TOKENISE_FEATURE_COUNT = 2;
+	int SENTENCE_TOKENISE_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Tokenize Corpus</em>' operation.
@@ -205,13 +214,31 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	int DEFINITION_MARKER__SENTENCE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Taggeddefinition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFINITION_MARKER__TAGGEDDEFINITION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Asociator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFINITION_MARKER__ASOCIATOR = 2;
+
+	/**
 	 * The number of structural features of the '<em>Definition Marker</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION_MARKER_FEATURE_COUNT = 1;
+	int DEFINITION_MARKER_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Is Definition</em>' operation.
@@ -296,13 +323,13 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	int TAGGED_DEFINITION__OUTSIDE_TAG = 3;
 
 	/**
-	 * The feature id for the '<em><b>Definitionmarker</b></em>' reference.
+	 * The feature id for the '<em><b>Resultsender</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAGGED_DEFINITION__DEFINITIONMARKER = 4;
+	int TAGGED_DEFINITION__RESULTSENDER = 4;
 
 	/**
 	 * The number of structural features of the '<em>Tagged Definition</em>' class.
@@ -351,22 +378,13 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	int ASOCIATOR__LIST_OF_DEFINITION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Definitionmarker</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASOCIATOR__DEFINITIONMARKER = 1;
-
-	/**
 	 * The number of structural features of the '<em>Asociator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASOCIATOR_FEATURE_COUNT = 2;
+	int ASOCIATOR_FEATURE_COUNT = 1;
 
 	/**
 	 * The operation id for the '<em>Associte Definition</em>' operation.
@@ -415,15 +433,6 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	int TYPE_OF_ASSOCIATION__LIST_OF_DEFINITION = ASOCIATOR__LIST_OF_DEFINITION;
 
 	/**
-	 * The feature id for the '<em><b>Definitionmarker</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_OF_ASSOCIATION__DEFINITIONMARKER = ASOCIATOR__DEFINITIONMARKER;
-
-	/**
 	 * The feature id for the '<em><b>Type Association</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -467,6 +476,116 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	 * @ordered
 	 */
 	int TYPE_OF_ASSOCIATION_OPERATION_COUNT = ASOCIATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link deftEvalDiagr.impl.FrequencyComputerImpl <em>Frequency Computer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see deftEvalDiagr.impl.FrequencyComputerImpl
+	 * @see deftEvalDiagr.impl.DeftEvalDiagrPackageImpl#getFrequencyComputer()
+	 * @generated
+	 */
+	int FREQUENCY_COMPUTER = 6;
+
+	/**
+	 * The feature id for the '<em><b>Sentence</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREQUENCY_COMPUTER__SENTENCE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Frequency Computer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREQUENCY_COMPUTER_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>Frequency List</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREQUENCY_COMPUTER___FREQUENCY_LIST = 0;
+
+	/**
+	 * The operation id for the '<em>Dictionary</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREQUENCY_COMPUTER___DICTIONARY = 1;
+
+	/**
+	 * The operation id for the '<em>Frequencies</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREQUENCY_COMPUTER___FREQUENCIES = 2;
+
+	/**
+	 * The number of operations of the '<em>Frequency Computer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREQUENCY_COMPUTER_OPERATION_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link deftEvalDiagr.impl.ResultSenderImpl <em>Result Sender</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see deftEvalDiagr.impl.ResultSenderImpl
+	 * @see deftEvalDiagr.impl.DeftEvalDiagrPackageImpl#getResultSender()
+	 * @generated
+	 */
+	int RESULT_SENDER = 7;
+
+	/**
+	 * The feature id for the '<em><b>Result Definitions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT_SENDER__RESULT_DEFINITIONS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Result Sender</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT_SENDER_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>Send Result</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT_SENDER___SEND_RESULT = 0;
+
+	/**
+	 * The number of operations of the '<em>Result Sender</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESULT_SENDER_OPERATION_COUNT = 1;
 
 	/**
 	 * Returns the meta object for class '{@link deftEvalDiagr.Corpus <em>Corpus</em>}'.
@@ -553,6 +672,17 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	EReference getSentenceTokenise_Definitionmarker();
 
 	/**
+	 * Returns the meta object for the reference '{@link deftEvalDiagr.SentenceTokenise#getFrequencycomputer <em>Frequencycomputer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Frequencycomputer</em>'.
+	 * @see deftEvalDiagr.SentenceTokenise#getFrequencycomputer()
+	 * @see #getSentenceTokenise()
+	 * @generated
+	 */
+	EReference getSentenceTokenise_Frequencycomputer();
+
+	/**
 	 * Returns the meta object for the '{@link deftEvalDiagr.SentenceTokenise#tokenizeCorpus() <em>Tokenize Corpus</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -592,6 +722,28 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDefinitionMarker_Sentence();
+
+	/**
+	 * Returns the meta object for the reference '{@link deftEvalDiagr.DefinitionMarker#getTaggeddefinition <em>Taggeddefinition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Taggeddefinition</em>'.
+	 * @see deftEvalDiagr.DefinitionMarker#getTaggeddefinition()
+	 * @see #getDefinitionMarker()
+	 * @generated
+	 */
+	EReference getDefinitionMarker_Taggeddefinition();
+
+	/**
+	 * Returns the meta object for the reference '{@link deftEvalDiagr.DefinitionMarker#getAsociator <em>Asociator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Asociator</em>'.
+	 * @see deftEvalDiagr.DefinitionMarker#getAsociator()
+	 * @see #getDefinitionMarker()
+	 * @generated
+	 */
+	EReference getDefinitionMarker_Asociator();
 
 	/**
 	 * Returns the meta object for the '{@link deftEvalDiagr.DefinitionMarker#isDefinition() <em>Is Definition</em>}' operation.
@@ -678,15 +830,15 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	EAttribute getTaggedDefinition_OutsideTag();
 
 	/**
-	 * Returns the meta object for the reference '{@link deftEvalDiagr.TaggedDefinition#getDefinitionmarker <em>Definitionmarker</em>}'.
+	 * Returns the meta object for the containment reference list '{@link deftEvalDiagr.TaggedDefinition#getResultsender <em>Resultsender</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Definitionmarker</em>'.
-	 * @see deftEvalDiagr.TaggedDefinition#getDefinitionmarker()
+	 * @return the meta object for the containment reference list '<em>Resultsender</em>'.
+	 * @see deftEvalDiagr.TaggedDefinition#getResultsender()
 	 * @see #getTaggedDefinition()
 	 * @generated
 	 */
-	EReference getTaggedDefinition_Definitionmarker();
+	EReference getTaggedDefinition_Resultsender();
 
 	/**
 	 * Returns the meta object for the '{@link deftEvalDiagr.TaggedDefinition#sentenceTagger() <em>Sentence Tagger</em>}' operation.
@@ -718,17 +870,6 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAsociator_ListOfDefinition();
-
-	/**
-	 * Returns the meta object for the reference '{@link deftEvalDiagr.Asociator#getDefinitionmarker <em>Definitionmarker</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Definitionmarker</em>'.
-	 * @see deftEvalDiagr.Asociator#getDefinitionmarker()
-	 * @see #getAsociator()
-	 * @generated
-	 */
-	EReference getAsociator_Definitionmarker();
 
 	/**
 	 * Returns the meta object for the '{@link deftEvalDiagr.Asociator#associteDefinition() <em>Associte Definition</em>}' operation.
@@ -770,6 +911,88 @@ public interface DeftEvalDiagrPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTypeOfAssociation_TypeAssociation();
+
+	/**
+	 * Returns the meta object for class '{@link deftEvalDiagr.FrequencyComputer <em>Frequency Computer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Frequency Computer</em>'.
+	 * @see deftEvalDiagr.FrequencyComputer
+	 * @generated
+	 */
+	EClass getFrequencyComputer();
+
+	/**
+	 * Returns the meta object for the attribute '{@link deftEvalDiagr.FrequencyComputer#getSentence <em>Sentence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sentence</em>'.
+	 * @see deftEvalDiagr.FrequencyComputer#getSentence()
+	 * @see #getFrequencyComputer()
+	 * @generated
+	 */
+	EAttribute getFrequencyComputer_Sentence();
+
+	/**
+	 * Returns the meta object for the '{@link deftEvalDiagr.FrequencyComputer#frequencyList() <em>Frequency List</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Frequency List</em>' operation.
+	 * @see deftEvalDiagr.FrequencyComputer#frequencyList()
+	 * @generated
+	 */
+	EOperation getFrequencyComputer__FrequencyList();
+
+	/**
+	 * Returns the meta object for the '{@link deftEvalDiagr.FrequencyComputer#dictionary() <em>Dictionary</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Dictionary</em>' operation.
+	 * @see deftEvalDiagr.FrequencyComputer#dictionary()
+	 * @generated
+	 */
+	EOperation getFrequencyComputer__Dictionary();
+
+	/**
+	 * Returns the meta object for the '{@link deftEvalDiagr.FrequencyComputer#frequencies() <em>Frequencies</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Frequencies</em>' operation.
+	 * @see deftEvalDiagr.FrequencyComputer#frequencies()
+	 * @generated
+	 */
+	EOperation getFrequencyComputer__Frequencies();
+
+	/**
+	 * Returns the meta object for class '{@link deftEvalDiagr.ResultSender <em>Result Sender</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Result Sender</em>'.
+	 * @see deftEvalDiagr.ResultSender
+	 * @generated
+	 */
+	EClass getResultSender();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link deftEvalDiagr.ResultSender#getResultDefinitions <em>Result Definitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Result Definitions</em>'.
+	 * @see deftEvalDiagr.ResultSender#getResultDefinitions()
+	 * @see #getResultSender()
+	 * @generated
+	 */
+	EAttribute getResultSender_ResultDefinitions();
+
+	/**
+	 * Returns the meta object for the '{@link deftEvalDiagr.ResultSender#sendResult() <em>Send Result</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Send Result</em>' operation.
+	 * @see deftEvalDiagr.ResultSender#sendResult()
+	 * @generated
+	 */
+	EOperation getResultSender__SendResult();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -863,6 +1086,14 @@ public interface DeftEvalDiagrPackage extends EPackage {
 		EReference SENTENCE_TOKENISE__DEFINITIONMARKER = eINSTANCE.getSentenceTokenise_Definitionmarker();
 
 		/**
+		 * The meta object literal for the '<em><b>Frequencycomputer</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SENTENCE_TOKENISE__FREQUENCYCOMPUTER = eINSTANCE.getSentenceTokenise_Frequencycomputer();
+
+		/**
 		 * The meta object literal for the '<em><b>Tokenize Corpus</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -895,6 +1126,22 @@ public interface DeftEvalDiagrPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEFINITION_MARKER__SENTENCE = eINSTANCE.getDefinitionMarker_Sentence();
+
+		/**
+		 * The meta object literal for the '<em><b>Taggeddefinition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEFINITION_MARKER__TAGGEDDEFINITION = eINSTANCE.getDefinitionMarker_Taggeddefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Asociator</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEFINITION_MARKER__ASOCIATOR = eINSTANCE.getDefinitionMarker_Asociator();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Definition</b></em>' operation.
@@ -963,12 +1210,12 @@ public interface DeftEvalDiagrPackage extends EPackage {
 		EAttribute TAGGED_DEFINITION__OUTSIDE_TAG = eINSTANCE.getTaggedDefinition_OutsideTag();
 
 		/**
-		 * The meta object literal for the '<em><b>Definitionmarker</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Resultsender</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TAGGED_DEFINITION__DEFINITIONMARKER = eINSTANCE.getTaggedDefinition_Definitionmarker();
+		EReference TAGGED_DEFINITION__RESULTSENDER = eINSTANCE.getTaggedDefinition_Resultsender();
 
 		/**
 		 * The meta object literal for the '<em><b>Sentence Tagger</b></em>' operation.
@@ -995,14 +1242,6 @@ public interface DeftEvalDiagrPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ASOCIATOR__LIST_OF_DEFINITION = eINSTANCE.getAsociator_ListOfDefinition();
-
-		/**
-		 * The meta object literal for the '<em><b>Definitionmarker</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASOCIATOR__DEFINITIONMARKER = eINSTANCE.getAsociator_Definitionmarker();
 
 		/**
 		 * The meta object literal for the '<em><b>Associte Definition</b></em>' operation.
@@ -1037,6 +1276,74 @@ public interface DeftEvalDiagrPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TYPE_OF_ASSOCIATION__TYPE_ASSOCIATION = eINSTANCE.getTypeOfAssociation_TypeAssociation();
+
+		/**
+		 * The meta object literal for the '{@link deftEvalDiagr.impl.FrequencyComputerImpl <em>Frequency Computer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see deftEvalDiagr.impl.FrequencyComputerImpl
+		 * @see deftEvalDiagr.impl.DeftEvalDiagrPackageImpl#getFrequencyComputer()
+		 * @generated
+		 */
+		EClass FREQUENCY_COMPUTER = eINSTANCE.getFrequencyComputer();
+
+		/**
+		 * The meta object literal for the '<em><b>Sentence</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREQUENCY_COMPUTER__SENTENCE = eINSTANCE.getFrequencyComputer_Sentence();
+
+		/**
+		 * The meta object literal for the '<em><b>Frequency List</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FREQUENCY_COMPUTER___FREQUENCY_LIST = eINSTANCE.getFrequencyComputer__FrequencyList();
+
+		/**
+		 * The meta object literal for the '<em><b>Dictionary</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FREQUENCY_COMPUTER___DICTIONARY = eINSTANCE.getFrequencyComputer__Dictionary();
+
+		/**
+		 * The meta object literal for the '<em><b>Frequencies</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FREQUENCY_COMPUTER___FREQUENCIES = eINSTANCE.getFrequencyComputer__Frequencies();
+
+		/**
+		 * The meta object literal for the '{@link deftEvalDiagr.impl.ResultSenderImpl <em>Result Sender</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see deftEvalDiagr.impl.ResultSenderImpl
+		 * @see deftEvalDiagr.impl.DeftEvalDiagrPackageImpl#getResultSender()
+		 * @generated
+		 */
+		EClass RESULT_SENDER = eINSTANCE.getResultSender();
+
+		/**
+		 * The meta object literal for the '<em><b>Result Definitions</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESULT_SENDER__RESULT_DEFINITIONS = eINSTANCE.getResultSender_ResultDefinitions();
+
+		/**
+		 * The meta object literal for the '<em><b>Send Result</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RESULT_SENDER___SEND_RESULT = eINSTANCE.getResultSender__SendResult();
 
 	}
 

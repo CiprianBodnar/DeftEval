@@ -2,6 +2,8 @@
  */
 package deftEvalDiagr;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link deftEvalDiagr.TaggedDefinition#getStartTag <em>Start Tag</em>}</li>
  *   <li>{@link deftEvalDiagr.TaggedDefinition#getInsideTag <em>Inside Tag</em>}</li>
  *   <li>{@link deftEvalDiagr.TaggedDefinition#getOutsideTag <em>Outside Tag</em>}</li>
- *   <li>{@link deftEvalDiagr.TaggedDefinition#getDefinitionmarker <em>Definitionmarker</em>}</li>
+ *   <li>{@link deftEvalDiagr.TaggedDefinition#getResultsender <em>Resultsender</em>}</li>
  * </ul>
  *
  * @see deftEvalDiagr.DeftEvalDiagrPackage#getTaggedDefinition()
@@ -114,26 +116,16 @@ public interface TaggedDefinition extends EObject {
 	void setOutsideTag(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Definitionmarker</b></em>' reference.
+	 * Returns the value of the '<em><b>Resultsender</b></em>' containment reference list.
+	 * The list contents are of type {@link deftEvalDiagr.ResultSender}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Definitionmarker</em>' reference.
-	 * @see #setDefinitionmarker(DefinitionMarker)
-	 * @see deftEvalDiagr.DeftEvalDiagrPackage#getTaggedDefinition_Definitionmarker()
-	 * @model
+	 * @return the value of the '<em>Resultsender</em>' containment reference list.
+	 * @see deftEvalDiagr.DeftEvalDiagrPackage#getTaggedDefinition_Resultsender()
+	 * @model containment="true"
 	 * @generated
 	 */
-	DefinitionMarker getDefinitionmarker();
-
-	/**
-	 * Sets the value of the '{@link deftEvalDiagr.TaggedDefinition#getDefinitionmarker <em>Definitionmarker</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Definitionmarker</em>' reference.
-	 * @see #getDefinitionmarker()
-	 * @generated
-	 */
-	void setDefinitionmarker(DefinitionMarker value);
+	EList<ResultSender> getResultsender();
 
 	/**
 	 * <!-- begin-user-doc -->

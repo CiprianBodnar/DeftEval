@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see deftEvalDiagr.DeftEvalDiagrPackage#getCorpus()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Corpus extends EObject {

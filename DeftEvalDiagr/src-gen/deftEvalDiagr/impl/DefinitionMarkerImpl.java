@@ -2,6 +2,7 @@
  */
 package deftEvalDiagr.impl;
 
+import deftEvalDiagr.Asociator;
 import deftEvalDiagr.DefinitionMarker;
 import deftEvalDiagr.DeftEvalDiagrPackage;
 import deftEvalDiagr.TaggedDefinition;
@@ -13,6 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -26,6 +28,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link deftEvalDiagr.impl.DefinitionMarkerImpl#getSentence <em>Sentence</em>}</li>
+ *   <li>{@link deftEvalDiagr.impl.DefinitionMarkerImpl#getTaggeddefinition <em>Taggeddefinition</em>}</li>
+ *   <li>{@link deftEvalDiagr.impl.DefinitionMarkerImpl#getAsociator <em>Asociator</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +54,26 @@ public class DefinitionMarkerImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String sentence = SENTENCE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTaggeddefinition() <em>Taggeddefinition</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTaggeddefinition()
+	 * @generated
+	 * @ordered
+	 */
+	protected TaggedDefinition taggeddefinition;
+
+	/**
+	 * The cached value of the '{@link #getAsociator() <em>Asociator</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAsociator()
+	 * @generated
+	 * @ordered
+	 */
+	protected Asociator asociator;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,6 +124,91 @@ public class DefinitionMarkerImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
+	public TaggedDefinition getTaggeddefinition() {
+		if (taggeddefinition != null && taggeddefinition.eIsProxy()) {
+			InternalEObject oldTaggeddefinition = (InternalEObject) taggeddefinition;
+			taggeddefinition = (TaggedDefinition) eResolveProxy(oldTaggeddefinition);
+			if (taggeddefinition != oldTaggeddefinition) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DeftEvalDiagrPackage.DEFINITION_MARKER__TAGGEDDEFINITION, oldTaggeddefinition,
+							taggeddefinition));
+			}
+		}
+		return taggeddefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TaggedDefinition basicGetTaggeddefinition() {
+		return taggeddefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTaggeddefinition(TaggedDefinition newTaggeddefinition) {
+		TaggedDefinition oldTaggeddefinition = taggeddefinition;
+		taggeddefinition = newTaggeddefinition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DeftEvalDiagrPackage.DEFINITION_MARKER__TAGGEDDEFINITION, oldTaggeddefinition, taggeddefinition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Asociator getAsociator() {
+		if (asociator != null && asociator.eIsProxy()) {
+			InternalEObject oldAsociator = (InternalEObject) asociator;
+			asociator = (Asociator) eResolveProxy(oldAsociator);
+			if (asociator != oldAsociator) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DeftEvalDiagrPackage.DEFINITION_MARKER__ASOCIATOR, oldAsociator, asociator));
+			}
+		}
+		return asociator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Asociator basicGetAsociator() {
+		return asociator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAsociator(Asociator newAsociator) {
+		Asociator oldAsociator = asociator;
+		asociator = newAsociator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DeftEvalDiagrPackage.DEFINITION_MARKER__ASOCIATOR,
+					oldAsociator, asociator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean isDefinition() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -140,6 +249,14 @@ public class DefinitionMarkerImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case DeftEvalDiagrPackage.DEFINITION_MARKER__SENTENCE:
 			return getSentence();
+		case DeftEvalDiagrPackage.DEFINITION_MARKER__TAGGEDDEFINITION:
+			if (resolve)
+				return getTaggeddefinition();
+			return basicGetTaggeddefinition();
+		case DeftEvalDiagrPackage.DEFINITION_MARKER__ASOCIATOR:
+			if (resolve)
+				return getAsociator();
+			return basicGetAsociator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,6 +271,12 @@ public class DefinitionMarkerImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case DeftEvalDiagrPackage.DEFINITION_MARKER__SENTENCE:
 			setSentence((String) newValue);
+			return;
+		case DeftEvalDiagrPackage.DEFINITION_MARKER__TAGGEDDEFINITION:
+			setTaggeddefinition((TaggedDefinition) newValue);
+			return;
+		case DeftEvalDiagrPackage.DEFINITION_MARKER__ASOCIATOR:
+			setAsociator((Asociator) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -170,6 +293,12 @@ public class DefinitionMarkerImpl extends MinimalEObjectImpl.Container implement
 		case DeftEvalDiagrPackage.DEFINITION_MARKER__SENTENCE:
 			setSentence(SENTENCE_EDEFAULT);
 			return;
+		case DeftEvalDiagrPackage.DEFINITION_MARKER__TAGGEDDEFINITION:
+			setTaggeddefinition((TaggedDefinition) null);
+			return;
+		case DeftEvalDiagrPackage.DEFINITION_MARKER__ASOCIATOR:
+			setAsociator((Asociator) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,6 +313,10 @@ public class DefinitionMarkerImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case DeftEvalDiagrPackage.DEFINITION_MARKER__SENTENCE:
 			return SENTENCE_EDEFAULT == null ? sentence != null : !SENTENCE_EDEFAULT.equals(sentence);
+		case DeftEvalDiagrPackage.DEFINITION_MARKER__TAGGEDDEFINITION:
+			return taggeddefinition != null;
+		case DeftEvalDiagrPackage.DEFINITION_MARKER__ASOCIATOR:
+			return asociator != null;
 		}
 		return super.eIsSet(featureID);
 	}

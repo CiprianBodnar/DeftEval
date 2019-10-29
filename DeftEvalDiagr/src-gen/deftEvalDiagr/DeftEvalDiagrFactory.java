@@ -22,15 +22,6 @@ public interface DeftEvalDiagrFactory extends EFactory {
 	DeftEvalDiagrFactory eINSTANCE = deftEvalDiagr.impl.DeftEvalDiagrFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Corpus</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Corpus</em>'.
-	 * @generated
-	 */
-	Corpus createCorpus();
-
-	/**
 	 * Returns a new object of class '<em>Sentence Tokenise</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,6 +65,15 @@ public interface DeftEvalDiagrFactory extends EFactory {
 	 * @generated
 	 */
 	TypeOfAssociation createTypeOfAssociation();
+
+	/**
+	 * Returns a new object of class '<em>Frequency Computer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Frequency Computer</em>'.
+	 * @generated
+	 */
+	FrequencyComputer createFrequencyComputer();
 
 	/**
 	 * Returns the package supported by this factory.
