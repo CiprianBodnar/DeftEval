@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/DeftEvalDiagr/src-gen" creationIcons="false" editDirectory="/DeftEvalDiagr.edit/src-gen"
+    editorDirectory="/DeftEvalDiagr.editor/src-gen" modelPluginID="DeftEvalDiagr"
+    modelName="DeftEvalDiagr" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>deftEvalDiagr.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="DeftEvalDiagr" disposableProviderFactory="true" ecorePackage="deftEvalDiagr.ecore#/">
+    <genClasses ecoreClass="deftEvalDiagr.ecore#//Corpus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//Corpus/inputText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deftEvalDiagr.ecore#//Corpus/sentencetokenise"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//Corpus/geInputText"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//Corpus/setInputText"/>
+    </genClasses>
+    <genClasses ecoreClass="deftEvalDiagr.ecore#//SentenceTokenise">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//SentenceTokenise/listOfSentence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deftEvalDiagr.ecore#//SentenceTokenise/definitionmarker"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deftEvalDiagr.ecore#//SentenceTokenise/frequencycomputer"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//SentenceTokenise/tokenizeCorpus"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//SentenceTokenise/getSentence"/>
+    </genClasses>
+    <genClasses ecoreClass="deftEvalDiagr.ecore#//DefinitionMarker">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//DefinitionMarker/sentence"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deftEvalDiagr.ecore#//DefinitionMarker/taggeddefinition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference deftEvalDiagr.ecore#//DefinitionMarker/asociator"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//DefinitionMarker/isDefinition"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//DefinitionMarker/tagSentence"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//DefinitionMarker/getTaggedDefinition"/>
+    </genClasses>
+    <genClasses ecoreClass="deftEvalDiagr.ecore#//TaggedDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//TaggedDefinition/sentence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//TaggedDefinition/startTag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//TaggedDefinition/insideTag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//TaggedDefinition/outsideTag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference deftEvalDiagr.ecore#//TaggedDefinition/resultsender"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//TaggedDefinition/sentenceTagger"/>
+    </genClasses>
+    <genClasses ecoreClass="deftEvalDiagr.ecore#//Asociator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//Asociator/listOfDefinition"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//Asociator/associteDefinition"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//Asociator/typeAssociation"/>
+    </genClasses>
+    <genClasses ecoreClass="deftEvalDiagr.ecore#//TypeOfAssociation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//TypeOfAssociation/typeAssociation"/>
+    </genClasses>
+    <genClasses ecoreClass="deftEvalDiagr.ecore#//FrequencyComputer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//FrequencyComputer/sentence"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//FrequencyComputer/frequencyList"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//FrequencyComputer/dictionary"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//FrequencyComputer/frequencies"/>
+    </genClasses>
+    <genClasses ecoreClass="deftEvalDiagr.ecore#//ResultSender">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute deftEvalDiagr.ecore#//ResultSender/resultDefinitions"/>
+      <genOperations ecoreOperation="deftEvalDiagr.ecore#//ResultSender/sendResult"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
