@@ -1,3 +1,5 @@
+from Corpus import *
+
 class SentenceTokenise:
     def __init__(self):
         pass
