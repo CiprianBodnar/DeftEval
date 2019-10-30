@@ -1,11 +1,10 @@
 import abc
 
-
 class Corpus:
     def __init__(self):
+        self.receivedText = ""
         pass
 
-    receivedText=""
     @abc.abstractmethod
 
     def getInputText(self, text):

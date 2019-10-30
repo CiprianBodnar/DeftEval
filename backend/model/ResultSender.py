@@ -1,13 +1,13 @@
 import abc
 
-import FrequencyComputer
+from backend.model.FrequencyComputer import FrequencyComputer
 
 
 class ResultSender:
     def __init__(self):
         pass
 
-    resultText = FrequencyComputer.frequencies()
+    resultText = FrequencyComputer().frequencies( "My sentence")
 
     @abc.abstractmethod
     def SendResult(self, resultDefinitions):

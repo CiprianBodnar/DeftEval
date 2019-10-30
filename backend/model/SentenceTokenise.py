@@ -1,10 +1,11 @@
-from Corpus import *
+from backend.model.Corpus import Corpus
+
 
 class SentenceTokenise:
     def __init__(self):
         pass
 
-    listOfSentence=Corpus.getInputText()
+    listOfSentence = Corpus().getInputText("input text")
 
     def tokenizeCorpus(self, listOfSentence):
         pass
