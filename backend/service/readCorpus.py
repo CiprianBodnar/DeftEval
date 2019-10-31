@@ -1,9 +1,8 @@
-from backend.model.Corpus import Corpus
 import re
 
 
 def read_corpus(file_path):
-    corpus = Corpus()
+    received_text = ''
     with open(file_path, encoding="utf8") as fr:
         line = fr.readline()
         while line:
@@ -12,14 +11,12 @@ def read_corpus(file_path):
                 begin = line.find('.')
                 line = line[begin + 1:]
 
-            corpus.receivedText += line
-            # print(line.strip())
-
+            received_text += line
             line = fr.readline()
 
-    corpus.receivedText = " ".join(re.split("\s+", corpus.receivedText, flags=re.UNICODE))
-    print(corpus.receivedText)
+    received_text = " ".join(re.split("\s+",received_text, flags=re.UNICODE))
     fr.close()
+    return received_text
 
 
-# read_corpus("t1_biology_1_0.txt")
+# read_corpus("../../data/source_txt/train/t1_biology_1_0.txt")
