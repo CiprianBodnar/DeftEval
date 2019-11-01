@@ -1,4 +1,4 @@
-from backend.service.readCorpus import read_corpus
+from backend.service.ReadCorpus import read_corpus
 from backend.service.ExtractSentences import extract_sentences
 from backend.model.Corpus import Corpus
 from backend.model.SentenceTokenise import SentenceTokenise

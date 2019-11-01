@@ -6,7 +6,7 @@ def read_corpus(file_path):
     with open(file_path, encoding="utf8") as fr:
         line = fr.readline()
         while line:
-            # print(line)
+
             if line.find('.', 0, 5) > 0:
                 begin = line.find('.')
                 line = line[begin + 1:]
