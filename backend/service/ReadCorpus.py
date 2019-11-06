@@ -1,9 +1,10 @@
 import re
+import io
 
 
 def read_corpus(file_path):
     received_text = ''
-    with open(file_path, encoding="utf8") as fr:
+    with io.open(file_path, encoding="utf8") as fr:
         line = fr.readline()
         while line:
 

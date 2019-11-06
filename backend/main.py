@@ -3,6 +3,12 @@ from backend.service.ExtractSentences import extract_sentences
 from backend.model.Corpus import Corpus
 from backend.model.SentenceTokenise import SentenceTokenise
 
+from nltk.corpus import stopwords
+from nltk.tokenize import sent_tokenize, word_tokenize
+
+import nltk.classify.util
+from nltk.classify import NaiveBayesClassifier
+from nltk.corpus import names
 
 if __name__ == "__main__":
 
@@ -18,5 +24,11 @@ if __name__ == "__main__":
     print(sentences.listOfSentence)
 
     print("\n########### Lista de propozitii - cate o prop:")
+
+    definitors = ['is', 'define', 'defined', 'are', 'of']
+
     for sent in sentences.listOfSentence:
-        print(sent)
+        if any(d in sentences.WordTokenize(sent) for d in definitors):
+            print("Este definitie:",sent.encode("utf-8"))
+        else:
+            print("NU este definitie:",sent.encode("utf-8"))
