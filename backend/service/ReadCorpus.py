@@ -1,9 +1,18 @@
 import re
 
 
-def read_corpus(file_path):
+def read_from_train_file():
+    my_train_file = input()
+    return my_train_file
+
+
+def concat_file_name(base_train_folder, file_name):
+    return base_train_folder + file_name
+
+
+def read_corpus(base_folder, input_file):
     received_text = ''
-    with open(file_path, encoding="utf8") as fr:
+    with open(concat_file_name(base_folder, input_file), encoding="utf8") as fr:
         line = fr.readline()
         while line:
 
@@ -14,9 +23,8 @@ def read_corpus(file_path):
             received_text += line
             line = fr.readline()
 
-    received_text = " ".join(re.split("\s+",received_text, flags=re.UNICODE))
+    received_text = " ".join(re.split("\s+", received_text, flags=re.UNICODE))
     fr.close()
     return received_text
-
 
 # read_corpus("../../data/source_txt/train/t1_biology_1_0.txt")

@@ -1,5 +1,6 @@
 class DefinitionMarker:
     def __init__(self):
+        self.input_file = ""
         pass
 
     def isDefinition(self, sentence):
