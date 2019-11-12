@@ -1,22 +1,21 @@
 from backend.model.Corpus import Corpus
-from backend.model.DefinitionMarker import *
-
-import nltk.classify.util
-from nltk.classify import NaiveBayesClassifier
-from nltk.corpus import names
+from backend.model.DefinitionMarker import DefinitionMarker
+from backend.model.SentenceTokenise import SentenceTokenise
+from backend.model.TaggedDefinition import TaggedDefinition
 
 if __name__ == "__main__":
-
     corpus = Corpus()
-    definition = DefinitionMarker()
+    sentences = SentenceTokenise()
+    definition_marker = DefinitionMarker()
+    taggedDefinition = TaggedDefinition()
 
-    print("\n########### Corpusul curat")
-    corp = corpus.getInputText("../data/source_txt/train/t1_biology_1_0.txt")
-    print (corp)
+    print("########## Corpusul curat:")
+    corp_received_text = corpus.getInputText()
 
     print("\n########### Lista de propozitii:")
-    sentences = corpus.getSentences(corp)
-    print (sentences)
+    sentences = corpus.getSentences(corp_received_text)
+
+    definition_marker.input_file = corpus.input_file
 
     print("\n########### Este definitie?:")
-    definition.containDefinitions(sentences)
+    definition_marker.containDefinitions(sentences)

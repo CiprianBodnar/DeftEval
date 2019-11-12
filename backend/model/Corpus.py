@@ -1,23 +1,26 @@
 import abc
-from backend.service.ReadCorpus import read_corpus
+
 from backend.model.SentenceTokenise import SentenceTokenise
 from backend.service.ExtractSentences import extract_sentences
+from backend.service.ReadCorpus import read_corpus
+
 
 class Corpus:
     def __init__(self):
-        self.receivedText = ""
+        self.receive_text = ""
+        self.input_file = input()
+        self.base_train_folder = "../data/source_txt/train/"
         pass
 
     sentences = SentenceTokenise()
+
     @abc.abstractmethod
-
-    def getInputText(self, text):
+    def getInputText(self):
         # Corpusul curat
-        Corpus.receivedText = read_corpus(text)
-
+        Corpus.receivedText = read_corpus(self.base_train_folder, self.input_file)
         return Corpus.receivedText
 
-    def getSentences(self,text):
+    def getSentences(self, text):
         # Lista de propozitii
         self.sentences.listOfSentence = extract_sentences(text)
 
