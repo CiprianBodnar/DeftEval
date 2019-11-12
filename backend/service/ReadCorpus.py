@@ -27,7 +27,7 @@ def read_corpus(base_folder, input_file):
         print("Could not open the log file: %s" % e)
 
     received_text = " ".join(re.split("\s+", received_text, flags=re.UNICODE))
-    fr.close()
+
     return received_text
 
 # read_corpus("../../data/source_txt/train/t1_biology_1_0.txt")

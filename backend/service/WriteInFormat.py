@@ -26,5 +26,14 @@ def write(list_of_words, out, input_file):
             out.write("\t")
             out.write(str(start_tag + len(line)))
             start_tag = start_tag + len(line) + 1
+            out.write("\t")
+            out.write("NA")
+            out.write("\t")
+            out.write("NA")
+            out.write("\t")
+            out.write("NA")
+            out.write("\t")
+            out.write("NA")
             # TODO to complete here with rest of output model
             out.write("\n")
+    out.write("\n")
