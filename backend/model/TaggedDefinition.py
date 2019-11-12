@@ -1,3 +1,5 @@
+from backend.service.WriteInFormat import write_sentence_in_format
+
 class TaggedDefinition:
     def __init__(self):
         pass
@@ -11,3 +13,6 @@ class TaggedDefinition:
         :param outsideTag:
         """
         pass
+
+    def write_in_formar(self, sentences, input_file):
+        write_sentence_in_format(sentences, input_file)
