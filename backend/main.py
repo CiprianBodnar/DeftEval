@@ -1,22 +1,22 @@
-from backend.service.ReadCorpus import read_corpus
-from backend.service.ExtractSentences import extract_sentences
 from backend.model.Corpus import Corpus
-from backend.model.SentenceTokenise import SentenceTokenise
+from backend.model.DefinitionMarker import *
 
+import nltk.classify.util
+from nltk.classify import NaiveBayesClassifier
+from nltk.corpus import names
 
 if __name__ == "__main__":
 
     corpus = Corpus()
-    sentences = SentenceTokenise()
+    definition = DefinitionMarker()
 
-    print("########## Corpusul curat:" )
-    corpus.receivedText = read_corpus("../data/source_txt/train/t1_biology_1_0.txt")
-    print(corpus.receivedText)
+    print("\n########### Corpusul curat")
+    corp = corpus.getInputText("../data/source_txt/train/t1_biology_1_0.txt")
+    print (corp)
 
     print("\n########### Lista de propozitii:")
-    sentences.listOfSentence = extract_sentences(corpus.receivedText)
-    print(sentences.listOfSentence)
+    sentences = corpus.getSentences(corp)
+    print (sentences)
 
-    print("\n########### Lista de propozitii - cate o prop:")
-    for sent in sentences.listOfSentence:
-        print(sent)
+    print("\n########### Este definitie?:")
+    definition.isDefinition(sentences)

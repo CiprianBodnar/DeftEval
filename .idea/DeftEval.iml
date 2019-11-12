@@ -5,8 +5,14 @@
       <sourceFolder url="file://$MODULE_DIR$/backend/model" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/backend/service" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/backend/view" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.idea" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/data" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/data/deft_files" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/data/source_txt" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 2.7 (DeftEval) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
