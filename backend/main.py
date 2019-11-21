@@ -9,10 +9,9 @@ if __name__ == "__main__":
     definition_marker = DefinitionMarker()
     taggedDefinition = TaggedDefinition()
 
-    print("########## Corpusul curat:")
+
     corp_received_text = corpus.getInputText()
 
-    print("\n########### Lista de propozitii:")
     sentences = corpus.getSentences(corp_received_text)
 
     definition_marker.input_file = corpus.input_file
