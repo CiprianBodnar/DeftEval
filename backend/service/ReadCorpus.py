@@ -1,4 +1,26 @@
+import logging
 import re
+
+
+def before(fn):
+    logging.getLogger().setLevel(logging.INFO)
+
+    def wrapped(*args, **kws):
+        logging.info("Clean corpus read it:")
+        return fn(*args, **kws)
+
+    return wrapped
+
+
+def after(fn):
+    logging.getLogger().setLevel(logging.INFO)
+
+    def wrapped(*args, **kws):
+        retVal = fn(*args, **kws)
+        logging.info()
+        return retVal
+
+    return wrapped
 
 
 def read_from_train_file():
@@ -9,7 +31,7 @@ def read_from_train_file():
 def concat_file_name(base_train_folder, file_name):
     return base_train_folder + file_name
 
-
+@before
 def read_corpus(base_folder, input_file):
     received_text = ''
     try:
