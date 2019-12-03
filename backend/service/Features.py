@@ -42,6 +42,7 @@ def contain_punctuation(sent, punctuation):
     return False
 
 def contain_possesive_pronoun(sent):
+    ''' The sentence contain possesive pronoun'''
     global true_points, false_points
     definitors = ['I', 'we', 'you', 'they', 'my', 'your', 'it']
     if any(d in sentences.WordTokenize(sent) for d in definitors):
@@ -56,6 +57,17 @@ def sentence_start_with_articulated_noun(sent):
     global true_points, false_points
     sent_tag = SentenceTokenise.sentence_tagging(sent)[0][1]
     if sent_tag[0][1] == "DT" and sent_tag[1][1] == "NN":
+        true_points = true_points + 1
+        return True
+    else:
+        false_points = false_points + 1
+        return False
+
+def sentence_start_with_singular_noun(sent):
+    ''' The sentence starts with a singular noun'''
+    global true_points, false_points
+    sent_tag = SentenceTokenise.sentence_tagging(sent)[0][1]
+    if sent_tag[0][1] == "NN":
         true_points = true_points + 1
         return True
     else:
