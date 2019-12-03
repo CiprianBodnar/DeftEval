@@ -41,4 +41,4 @@ def read_file(file_read, file_write):
         return sentences_list
 
 
-#read_file("../../data/deft_files/dev/t1_biology_0_404.deft","t1_biology_0_404.verif")
+read_file("../../data/deft_files/dev/t1_biology_0_404.deft","../../data/deft_files/dev/t1_biology_0_404.verif")
