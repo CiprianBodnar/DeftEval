@@ -51,8 +51,8 @@ def is_definition(sent):
     contain_definitors(sent)
     contain_punctuation(sent, '-')
     contain_punctuation(sent, ':')
-    print(true_points)
-    print(false_points)
+    print("true_points",true_points)
+    print("false_points",false_points)
     if true_points > false_points:
         return True
     return False
