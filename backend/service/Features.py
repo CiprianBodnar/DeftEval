@@ -18,7 +18,7 @@ def feature2():
     pass
 
 
-def get_middle_sentence(sent: str):
+def get_middle_sentence(sent):
     sent_len = len(sent)
     return sent_len / 3, sent_len - sent_len / 3
 

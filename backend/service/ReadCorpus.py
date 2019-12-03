@@ -1,6 +1,6 @@
 import logging
 import re
-
+import io
 
 def before(fn):
     logging.getLogger().setLevel(logging.INFO)
@@ -35,7 +35,7 @@ def concat_file_name(base_train_folder, file_name):
 def read_corpus(base_folder, input_file):
     received_text = ''
     try:
-        with open(concat_file_name(base_folder, input_file), encoding="utf8") as fr:
+        with io.open(concat_file_name(base_folder, input_file), encoding="utf8") as fr:
             line = fr.readline()
             while line:
 

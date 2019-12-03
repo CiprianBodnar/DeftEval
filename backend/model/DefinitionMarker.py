@@ -1,5 +1,6 @@
 from backend.service.WriteInFormat import write_sentence_in_format
 from backend.service.Features import is_definition
+import io
 base_output_folder = "../output"
 
 
@@ -10,7 +11,7 @@ class DefinitionMarker:
 
     def containDefinitions(self, data):
         deft_file = self.input_file.replace(".txt", ".deft")
-        out = open(deft_file, "w", encoding="utf8")
+        out = io.open(deft_file, "w", encoding="utf8")
         for sent in data:
             write_sentence_in_format(sent, self.input_file, out)
             if is_definition(sent):
