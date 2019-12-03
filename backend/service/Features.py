@@ -17,6 +17,15 @@ def feature2():
     # TODO
     pass
 
+def contain_ISA(sent):
+    global true_points, false_points
+    sequence = ['is a']
+    if any(d in sentences.WordTokenize(sent) for d in sequence):
+        true_points = true_points + 1
+        return True
+    else:
+        false_points = false_points + 1
+        return False
 
 def get_middle_sentence(sent):
     sent_len = len(sent)
