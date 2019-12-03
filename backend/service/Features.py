@@ -17,6 +17,7 @@ def feature2():
     # TODO
     pass
 
+
 def contain_ISA(sent):
     global true_points, false_points
     sequence = ['is a']
@@ -31,7 +32,6 @@ def get_middle_sentence(sent):
     sent_len = len(sent)
     return sent_len / 3, sent_len - sent_len / 3
 
-
 def contain_punctuation(sent, punctuation):
     global true_points, false_points
     halfs = get_middle_sentence(sent)
@@ -41,6 +41,26 @@ def contain_punctuation(sent, punctuation):
     false_points = false_points + 1
     return False
 
+def contain_possesive_pronoun(sent):
+    global true_points, false_points
+    definitors = ['I', 'we', 'you', 'they', 'my', 'your', 'it']
+    if any(d in sentences.WordTokenize(sent) for d in definitors):
+        true_points = true_points + 1
+        return True
+    else:
+        false_points = false_points + 1
+        return False
+
+def sentence_start_with_articulated_noun(sent):
+    ''' The sentence starts with an articulated noun.("DT + NN") '''
+    global true_points, false_points
+    sent_tag = SentenceTokenise.sentence_tagging(sent)[0][1]
+    if sent_tag[0][1] == "DT" and sent_tag[1][1] == "NN":
+        true_points = true_points + 1
+        return True
+    else:
+        false_points = false_points + 1
+        return False
 
 def contain_definitors(sent):
     global true_points, false_points
@@ -52,7 +72,6 @@ def contain_definitors(sent):
         false_points = false_points + 1
         return False
 
-
 def is_definition(sent):
     global true_points, false_points
     false_points = 0
@@ -60,8 +79,8 @@ def is_definition(sent):
     contain_definitors(sent)
     contain_punctuation(sent, '-')
     contain_punctuation(sent, ':')
-    print("true_points",true_points)
-    print("false_points",false_points)
+    print("true_points", true_points)
+    print("false_points", false_points)
     if true_points > false_points:
         return True
     return False
