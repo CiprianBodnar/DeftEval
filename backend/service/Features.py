@@ -1,6 +1,6 @@
 import nltk
 from nltk import pos_tag
-
+from nltk.stem.wordnet import WordNetLemmatizer
 from SentenceTokenise import SentenceTokenise
 
 """This service has the scope to tell if a sentence is or not a definition. Each feature implementation should return 
@@ -28,22 +28,6 @@ def feature2():
     # TODO
     pass
 
-
-def contain_ISA(sent):
-    global true_points, false_points
-    ok = 0
-    for i in range(len(sentences.WordTokenize(sent))):
-        if sentences.WordTokenize(sent)[i] == "is" and sentences.WordTokenize(sent)[i + 1] == "a":
-            true_points = true_points + 1
-            ok = 1
-            return True
-        else:
-            false_points = false_points + 1
-            ok = 0
-    if ok == 0:
-        return False
-
-
 def get_middle_sentence(sent):
     sent_len = len(sent)
     return sent_len / 3, sent_len - sent_len / 3
@@ -69,6 +53,18 @@ def contain_definitors(sent):
         false_points = false_points + 1
         return False
 
+
+def contain_ISA(sent):
+    global true_points, false_points
+    ok = 0
+    for i in range(len(sentences.WordTokenize(sent))):
+        if sentences.WordTokenize(sent)[i] == "is" and sentences.WordTokenize(sent)[i + 1] == "a":
+            true_points = true_points + 1
+            return True
+    false_points = false_points + 1
+    return False
+
+
 def contain_articulated_noun(sent):
     global true_points, false_points
     ok = 0
@@ -76,13 +72,19 @@ def contain_articulated_noun(sent):
     for i in range(len(nltk.pos_tag(sentences.WordTokenize(sent)))):
         if nltk.pos_tag(list)[i][1] == "DT" and nltk.pos_tag(list)[i+1][1] == "NN":
             true_points = true_points + 1
-            ok = 1
             return True
-        else:
-            false_points = false_points + 1
-            ok = 0
-    if ok == 0:
-        return False
+    false_points = false_points + 1
+    return False
+
+def contain_toBe(sent):
+    global true_points, false_points
+    ok = 0
+    for w in sentences.WordTokenize(sent):
+        if WordNetLemmatizer().lemmatize(w, 'v') == "be":
+            true_points = true_points + 1
+            return True
+    false_points = false_points + 1
+    return False
 
 def is_definition(sent):
     global true_points, false_points
@@ -93,6 +95,7 @@ def is_definition(sent):
     contain_punctuation(sent, ':')
     contain_articulated_noun(sent)
     contain_ISA(sent)
+    contain_toBe(sent)
     check_present_tence(sent)
     print(true_points)
     print(false_points)
