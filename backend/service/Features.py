@@ -1,3 +1,6 @@
+import nltk
+from nltk import pos_tag
+from nltk.stem.wordnet import WordNetLemmatizer
 from SentenceTokenise import SentenceTokenise
 
 """This service has the scope to tell if a sentence is or not a definition. Each feature implementation should return 
@@ -8,29 +11,27 @@ true_points = 0
 false_points = 0
 
 
-def feature1():
-    # TODO
-    pass
+def check_present_tence(sent):
+    """check verbs are in present form"""
+    global false_points, true_points
+    tagged = pos_tag(sent)
+    for word in tagged:
+        if word[1].startswith('V'):
+            if word[1] not in ["VBP", "VBZ", "VBG"]:
+                false_points = false_points + 1
+                return False
+    true_points = true_points + 1
+    return True
 
 
 def feature2():
     # TODO
     pass
 
-
-def contain_ISA(sent):
-    global true_points, false_points
-    sequence = ['is a']
-    if any(d in sentences.WordTokenize(sent) for d in sequence):
-        true_points = true_points + 1
-        return True
-    else:
-        false_points = false_points + 1
-        return False
-
 def get_middle_sentence(sent):
     sent_len = len(sent)
     return sent_len / 3, sent_len - sent_len / 3
+
 
 def contain_punctuation(sent, punctuation):
     global true_points, false_points
@@ -41,39 +42,6 @@ def contain_punctuation(sent, punctuation):
     false_points = false_points + 1
     return False
 
-def contain_possesive_pronoun(sent):
-    ''' The sentence contain possesive pronoun'''
-    global true_points, false_points
-    definitors = ['I', 'we', 'you', 'they', 'my', 'your', 'it']
-    if any(d in sentences.WordTokenize(sent) for d in definitors):
-        true_points = true_points + 1
-        return True
-    else:
-        false_points = false_points + 1
-        return False
-
-def sentence_start_with_articulated_noun(sent):
-    ''' The sentence starts with an articulated noun.("DT + NN") '''
-    global true_points, false_points
-    sent_tag = sentences.sentence_tagging(sent)
-    print sent_tag
-    if sent_tag[0][1] == "DT" and sent_tag[1][1] == "NN":
-        true_points = true_points + 1
-        return True
-    else:
-        false_points = false_points + 1
-        return False
-
-def sentence_start_with_singular_noun(sent):
-    ''' The sentence starts with a singular noun'''
-    global true_points, false_points
-    sent_tag = sentences.sentence_tagging(sent)
-    if sent_tag[0][1] == "NN":
-        true_points = true_points + 1
-        return True
-    else:
-        false_points = false_points + 1
-        return False
 
 def contain_definitors(sent):
     global true_points, false_points
@@ -85,19 +53,63 @@ def contain_definitors(sent):
         false_points = false_points + 1
         return False
 
+
+def contain_isA(sent):
+    global true_points, false_points
+    for i in range(len(sentences.WordTokenize(sent))):
+        if sentences.WordTokenize(sent)[i] == "is" and sentences.WordTokenize(sent)[i + 1] == "a":
+            true_points = true_points + 1
+            return True
+    false_points = false_points + 1
+    return False
+
+
+def contain_articulated_noun(sent):
+    global true_points, false_points
+    list = sentences.WordTokenize(sent)
+    for i in range(len(nltk.pos_tag(sentences.WordTokenize(sent)))):
+        if nltk.pos_tag(list)[i][1] == "DT" and nltk.pos_tag(list)[i+1][1] == "NN":
+            true_points = true_points + 1
+            return True
+    false_points = false_points + 1
+    return False
+
+
+def contain_toBe(sent):
+    global true_points, false_points
+    ok = 0
+    for w in sentences.WordTokenize(sent):
+        if WordNetLemmatizer().lemmatize(w, 'v') == "be":
+            true_points = true_points + 1
+            return True
+    false_points = false_points + 1
+    return False
+
+
+def contain_toBe_called(sent):
+    global true_points, false_points
+    for i in range(len(sentences.WordTokenize(sent))):
+        if WordNetLemmatizer().lemmatize(sentences.WordTokenize(sent)[i], 'v') == "be" and sentences.WordTokenize(sent)[i + 1] in ("called","named"):
+            true_points = true_points + 1
+            return True
+    false_points = false_points + 1
+    return False
+
+
 def is_definition(sent):
     global true_points, false_points
     false_points = 0
     true_points = 0
     contain_definitors(sent)
-    #contain_punctuation(sent, '-')
-    #contain_punctuation(sent, ':')
-    #contain_ISA(sent)
-    sentence_start_with_articulated_noun(sent)
-    sentence_start_with_singular_noun(sent)
-    #contain_possesive_pronoun(sent)
-    print("true_points", true_points)
-    print("false_points", false_points)
-    if true_points > false_points:
+    contain_punctuation(sent, '-')
+    contain_punctuation(sent, ':')
+    contain_articulated_noun(sent)
+    contain_isA(sent)
+    contain_toBe(sent)
+    contain_toBe_called(sent)
+    check_present_tence(sent)
+    print(true_points)
+    print(false_points)
+    if true_points >= false_points:
         return True
     return False
