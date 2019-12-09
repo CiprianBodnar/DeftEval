@@ -1,3 +1,5 @@
+from nltk import pos_tag
+
 from SentenceTokenise import SentenceTokenise
 
 """This service has the scope to tell if a sentence is or not a definition. Each feature implementation should return 
@@ -8,14 +10,23 @@ true_points = 0
 false_points = 0
 
 
-def feature1():
-    # TODO
-    pass
+def check_present_tence(sent):
+    """check verbs are in present form"""
+    global false_points, true_points
+    tagged = pos_tag(sent)
+    for word in tagged:
+        if word[1].startswith('V'):
+            if word[1] not in ["VBP", "VBZ", "VBG"]:
+                false_points = false_points + 1
+                return False
+    true_points = true_points + 1
+    return True
 
 
 def feature2():
     # TODO
     pass
+
 
 def contain_ISA(sent):
     global true_points, false_points
@@ -30,6 +41,7 @@ def contain_ISA(sent):
             ok = 0
     if ok == 0:
         return False
+
 
 def get_middle_sentence(sent):
     sent_len = len(sent)
@@ -64,8 +76,9 @@ def is_definition(sent):
     contain_definitors(sent)
     contain_punctuation(sent, '-')
     contain_punctuation(sent, ':')
+    check_present_tence(sent)
     print(true_points)
     print(false_points)
-    if true_points > false_points:
+    if true_points >= false_points:
         return True
     return False
