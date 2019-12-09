@@ -19,12 +19,16 @@ def feature2():
 
 def contain_ISA(sent):
     global true_points, false_points
-    sequence = ['is a']
-    if any(d in sentences.WordTokenize(sent) for d in sequence):
-        true_points = true_points + 1
-        return True
-    else:
-        false_points = false_points + 1
+    ok = 0
+    for i in range(len(sentences.WordTokenize(sent))):
+        if sentences.WordTokenize(sent)[i] == "is" and sentences.WordTokenize(sent)[i + 1] == "a":
+            true_points = true_points + 1
+            ok = 1
+            return True
+        else:
+            false_points = false_points + 1
+            ok = 0
+    if ok == 0:
         return False
 
 def get_middle_sentence(sent):
@@ -60,6 +64,7 @@ def is_definition(sent):
     contain_definitors(sent)
     contain_punctuation(sent, '-')
     contain_punctuation(sent, ':')
+    contain_ISA(sent)
     print(true_points)
     print(false_points)
     if true_points > false_points:
