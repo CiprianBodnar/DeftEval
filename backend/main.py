@@ -18,3 +18,4 @@ if __name__ == "__main__":
 
     print("\n########### Este definitie?:")
     definition_marker.containDefinitions(sentences)
+

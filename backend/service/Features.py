@@ -55,7 +55,8 @@ def contain_possesive_pronoun(sent):
 def sentence_start_with_articulated_noun(sent):
     ''' The sentence starts with an articulated noun.("DT + NN") '''
     global true_points, false_points
-    sent_tag = SentenceTokenise.sentence_tagging(sent)[0][1]
+    sent_tag = sentences.sentence_tagging(sent)
+    print sent_tag
     if sent_tag[0][1] == "DT" and sent_tag[1][1] == "NN":
         true_points = true_points + 1
         return True
@@ -66,7 +67,7 @@ def sentence_start_with_articulated_noun(sent):
 def sentence_start_with_singular_noun(sent):
     ''' The sentence starts with a singular noun'''
     global true_points, false_points
-    sent_tag = SentenceTokenise.sentence_tagging(sent)[0][1]
+    sent_tag = sentences.sentence_tagging(sent)
     if sent_tag[0][1] == "NN":
         true_points = true_points + 1
         return True
@@ -89,8 +90,12 @@ def is_definition(sent):
     false_points = 0
     true_points = 0
     contain_definitors(sent)
-    contain_punctuation(sent, '-')
-    contain_punctuation(sent, ':')
+    #contain_punctuation(sent, '-')
+    #contain_punctuation(sent, ':')
+    #contain_ISA(sent)
+    sentence_start_with_articulated_noun(sent)
+    sentence_start_with_singular_noun(sent)
+    #contain_possesive_pronoun(sent)
     print("true_points", true_points)
     print("false_points", false_points)
     if true_points > false_points:
