@@ -1,3 +1,4 @@
+import nltk
 from nltk import pos_tag
 
 from SentenceTokenise import SentenceTokenise
@@ -68,6 +69,20 @@ def contain_definitors(sent):
         false_points = false_points + 1
         return False
 
+def contain_articulated_noun(sent):
+    global true_points, false_points
+    ok = 0
+    list = sentences.WordTokenize(sent)
+    for i in range(len(nltk.pos_tag(sentences.WordTokenize(sent)))):
+        if nltk.pos_tag(list)[i][1] == "DT" and nltk.pos_tag(list)[i+1][1] == "NN":
+            true_points = true_points + 1
+            ok = 1
+            return True
+        else:
+            false_points = false_points + 1
+            ok = 0
+    if ok == 0:
+        return False
 
 def is_definition(sent):
     global true_points, false_points
@@ -76,6 +91,8 @@ def is_definition(sent):
     contain_definitors(sent)
     contain_punctuation(sent, '-')
     contain_punctuation(sent, ':')
+    contain_articulated_noun(sent)
+    contain_ISA(sent)
     check_present_tence(sent)
     print(true_points)
     print(false_points)
