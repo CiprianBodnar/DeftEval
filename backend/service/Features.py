@@ -54,9 +54,8 @@ def contain_definitors(sent):
         return False
 
 
-def contain_ISA(sent):
+def contain_isA(sent):
     global true_points, false_points
-    ok = 0
     for i in range(len(sentences.WordTokenize(sent))):
         if sentences.WordTokenize(sent)[i] == "is" and sentences.WordTokenize(sent)[i + 1] == "a":
             true_points = true_points + 1
@@ -67,7 +66,6 @@ def contain_ISA(sent):
 
 def contain_articulated_noun(sent):
     global true_points, false_points
-    ok = 0
     list = sentences.WordTokenize(sent)
     for i in range(len(nltk.pos_tag(sentences.WordTokenize(sent)))):
         if nltk.pos_tag(list)[i][1] == "DT" and nltk.pos_tag(list)[i+1][1] == "NN":
@@ -75,6 +73,7 @@ def contain_articulated_noun(sent):
             return True
     false_points = false_points + 1
     return False
+
 
 def contain_toBe(sent):
     global true_points, false_points
@@ -86,6 +85,17 @@ def contain_toBe(sent):
     false_points = false_points + 1
     return False
 
+
+def contain_toBe_called(sent):
+    global true_points, false_points
+    for i in range(len(sentences.WordTokenize(sent))):
+        if WordNetLemmatizer().lemmatize(sentences.WordTokenize(sent)[i], 'v') == "be" and sentences.WordTokenize(sent)[i + 1] in ("called","named"):
+            true_points = true_points + 1
+            return True
+    false_points = false_points + 1
+    return False
+
+
 def is_definition(sent):
     global true_points, false_points
     false_points = 0
@@ -94,8 +104,9 @@ def is_definition(sent):
     contain_punctuation(sent, '-')
     contain_punctuation(sent, ':')
     contain_articulated_noun(sent)
-    contain_ISA(sent)
+    contain_isA(sent)
     contain_toBe(sent)
+    contain_toBe_called(sent)
     check_present_tence(sent)
     print(true_points)
     print(false_points)
