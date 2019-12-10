@@ -23,11 +23,6 @@ def check_present_tence(sent):
     true_points = true_points + 1
     return True
 
-
-def feature2():
-    # TODO
-    pass
-
 def get_middle_sentence(sent):
     sent_len = len(sent)
     return sent_len / 3, sent_len - sent_len / 3
@@ -150,8 +145,8 @@ def is_definition(sent):
     contain_chunk_location(sent)
     contain_chunk_person(sent)
     contain_chunk_organization(sent)
-    print(true_points)
-    print(false_points)
+    # print(true_points)
+    # print(false_points)
     if true_points >= false_points:
         return True
     return False
