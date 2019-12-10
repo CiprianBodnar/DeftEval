@@ -24,11 +24,13 @@ def check_present_tence(sent):
     return True
 
 def get_middle_sentence(sent):
+    '''function that returns the middle of the sentence'''
     sent_len = len(sent)
     return sent_len / 3, sent_len - sent_len / 3
 
 
 def contain_punctuation(sent, punctuation):
+    '''check if the middle of the sentence has punctuation mark(such as s hyphen or colon'''
     global true_points, false_points
     halfs = get_middle_sentence(sent)
     if punctuation in sent and halfs[0] <= sent.find(punctuation) <= halfs[1]:
@@ -39,6 +41,7 @@ def contain_punctuation(sent, punctuation):
 
 
 def contain_definitors(sent):
+    '''check if a sentence contain specified definitors of a definition '''
     global true_points, false_points
     definitors = ['is', 'define', 'defined', 'are', 'of']
     if any(d in sentences.WordTokenize(sent) for d in definitors):
@@ -50,6 +53,7 @@ def contain_definitors(sent):
 
 
 def contain_isA(sent):
+    '''check if a sentence contain specified definitor "is a"'''
     global true_points, false_points
     for i in range(len(sentences.WordTokenize(sent))):
         if sentences.WordTokenize(sent)[i] == "is" and sentences.WordTokenize(sent)[i + 1] == "a":
@@ -60,6 +64,7 @@ def contain_isA(sent):
 
 
 def contain_articulated_noun(sent):
+    '''check if a sentence contain an articulated noun(DET+NN)'''
     global true_points, false_points
     list = sentences.WordTokenize(sent)
     for i in range(len(nltk.pos_tag(sentences.WordTokenize(sent)))):
@@ -71,6 +76,7 @@ def contain_articulated_noun(sent):
 
 
 def contain_toBe(sent):
+    '''check if a sentence contains the verb "to be"'''
     global true_points, false_points
     ok = 0
     for w in sentences.WordTokenize(sent):
