@@ -18,3 +18,8 @@ def write(list_of_words, out, input_file):
     for line in list_of_words:
         # write line to output file
         pass
+
+def write_value(sentence, value, out):
+    out.write(sentence+" "+value+"\n")
+
+

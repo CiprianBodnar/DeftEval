@@ -1,4 +1,4 @@
-from backend.service.WriteInFormat import write_sentence_in_format
+from backend.service.WriteInFormat import write_value
 from backend.service.Features import is_definition
 import io
 base_output_folder = "../output"
@@ -13,11 +13,10 @@ class DefinitionMarker:
         deft_file = self.input_file.replace(".txt", ".deft")
         out = io.open(deft_file, "w", encoding="utf8")
         for sent in data:
-            write_sentence_in_format(sent, self.input_file, out)
             if is_definition(sent):
-                print("Este definitie:", sent.encode("utf-8"))
+                write_value(sent,"1", out)
             else:
-                print("NU este definitie:", sent.encode("utf-8"))
+                write_value(sent, "0", out)
         out.close()
 
     def tagSentence(self, sentence):
