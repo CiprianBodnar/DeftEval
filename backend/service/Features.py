@@ -90,7 +90,8 @@ def contain_toBe(sent):
 def contain_toBe_called(sent):
     global true_points, false_points
     for i in range(len(sentences.WordTokenize(sent))):
-        if WordNetLemmatizer().lemmatize(sentences.WordTokenize(sent)[i], 'v') == "be" and sentences.WordTokenize(sent)[i + 1] in ("called","named"):
+        #Composing Method: Substitute Algorithm (in)
+        if WordNetLemmatizer().lemmatize(sentences.WordTokenize(sent)[i], 'v') == "be" and sentences.WordTokenize(sent)[i + 1] in ("called","named","labeled", "termed", "titled", "entitle", "known"):
             true_points = true_points + 1
             return True
     false_points = false_points + 1
