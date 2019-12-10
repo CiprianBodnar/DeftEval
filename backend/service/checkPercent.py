@@ -20,9 +20,14 @@ def checkPercent(file_read):
     totalSent = totalSent + len(sentences_list)
 
     for i in range(len(sentences_list)):
-        if (is_definition(sentences_list[i]) == True) and (val_list[i] == '1'):
+
+        # Composing Method: Extract Variable
+        is_def = (is_definition(sentences_list[i]) == True) and (val_list[i] == '1')
+        is_not_def = (is_definition(sentences_list[i]) == False) and (val_list[i] == '0')
+
+        if is_def:
             trueCheck = trueCheck + 1
-        elif (is_definition(sentences_list[i]) == False) and (val_list[i] == '0'):
+        elif is_not_def:
             trueCheck = trueCheck + 1
         else:
             falseCheck = falseCheck + 1
@@ -31,4 +36,4 @@ def checkPercent(file_read):
     print("The percentage of correct answers:", percent, '%')
 
 
-# checkPercent("../../data/deft_files/dev/t1_biology_0_404.verif")
+checkPercent("../../data/deft_files/dev/t1_biology_0_404.verif")
