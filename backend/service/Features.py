@@ -1,5 +1,5 @@
 import nltk
-from nltk import pos_tag
+from nltk import pos_tag, ne_chunk
 from nltk.stem.wordnet import WordNetLemmatizer
 from SentenceTokenise import SentenceTokenise
 
@@ -95,6 +95,45 @@ def contain_toBe_called(sent):
     false_points = false_points + 1
     return False
 
+def contain_possesive_pronoun(sent):
+    ''' The sentence contain possesive pronoun'''
+    global true_points, false_points
+    definitors = ['I', 'we', 'you', 'they', 'my', 'your', 'it']
+    if any(d in sentences.WordTokenize(sent) for d in definitors):
+        true_points = true_points + 1
+    else:
+        false_points = false_points + 1
+    return False
+
+def contain_chunk_location(sent):
+    '''The sentence has a chunk marked as a location'''
+    global true_points, false_points
+    mark = str(ne_chunk(sentences.sentence_tagging(sent)))
+    if "GPE " in mark:
+        true_points = true_points + 1
+        return True
+    false_points = false_points + 1
+    return False
+
+def contain_chunk_person(sent):
+    '''The sentence has a chunk marked as a person'''
+    global true_points, false_points
+    mark = str(ne_chunk(sentences.sentence_tagging(sent)))
+    if "PERSON " in mark:
+        true_points = true_points + 1
+        return True
+    false_points = false_points + 1
+    return False
+
+def contain_chunk_organization(sent):
+    '''The sentence has a chunk marked as an organisation'''
+    global true_points, false_points
+    mark = str(ne_chunk(sentences.sentence_tagging(sent)))
+    if "ORGANISATION " in mark:
+        true_points = true_points + 1
+        return True
+    false_points = false_points + 1
+    return False
 
 def is_definition(sent):
     global true_points, false_points
@@ -108,6 +147,9 @@ def is_definition(sent):
     contain_toBe(sent)
     contain_toBe_called(sent)
     check_present_tence(sent)
+    contain_chunk_location(sent)
+    contain_chunk_person(sent)
+    contain_chunk_organization(sent)
     print(true_points)
     print(false_points)
     if true_points >= false_points:

@@ -2,7 +2,7 @@ from backend.model.Corpus import Corpus
 from backend.model.DefinitionMarker import DefinitionMarker
 from backend.model.SentenceTokenise import SentenceTokenise
 from backend.model.TaggedDefinition import TaggedDefinition
-import nltk
+
 if __name__ == "__main__":
     corpus = Corpus()
     sentences = SentenceTokenise()
@@ -18,4 +18,3 @@ if __name__ == "__main__":
 
     print("\n########### Este definitie?:")
     definition_marker.containDefinitions(sentences)
-
