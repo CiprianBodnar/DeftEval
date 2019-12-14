@@ -103,6 +103,7 @@ def contain_possesive_pronoun(sent):
     definitors = ['I', 'we', 'you', 'they', 'my', 'your', 'it']
     if any(d in sentences.WordTokenize(sent) for d in definitors):
         true_points = true_points + 1
+        return True
     else:
         false_points = false_points + 1
     return False
