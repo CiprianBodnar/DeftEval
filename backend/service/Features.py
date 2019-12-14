@@ -67,7 +67,7 @@ def contain_articulated_noun(sent):
     '''check if a sentence contain an articulated noun(DET+NN)'''
     global true_points, false_points
     list = sentences.WordTokenize(sent)
-    for i in range(len(nltk.pos_tag(sentences.WordTokenize(sent)))):
+    for i in range(len(sentences.sentence_tagging(sent))):
         if nltk.pos_tag(list)[i][1] == "DT" and nltk.pos_tag(list)[i+1][1] == "NN":
             true_points = true_points + 1
             return True
@@ -88,6 +88,7 @@ def contain_toBe(sent):
 
 
 def contain_toBe_called(sent):
+    ''' has sequence "FW IS"(FW is tag indicating a foreign word)'''
     global true_points, false_points
     for i in range(len(sentences.WordTokenize(sent))):
         #Composing Method: Substitute Algorithm (in)
