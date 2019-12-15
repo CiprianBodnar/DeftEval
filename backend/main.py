@@ -3,6 +3,9 @@ from backend.model.DefinitionMarker import DefinitionMarker
 from backend.model.SentenceTokenise import SentenceTokenise
 from backend.model.TaggedDefinition import TaggedDefinition
 
+import thread
+import time
+
 if __name__ == "__main__":
     corpus = Corpus()
     sentences = SentenceTokenise()
@@ -17,4 +20,11 @@ if __name__ == "__main__":
     definition_marker.input_file = corpus.input_file
 
     print("\n########### Este definitie?:")
-    definition_marker.containDefinitions(sentences)
+    #definition_marker.containDefinitions(sentences)
+
+    def test_stress(sentences):
+        for i in range(50):
+            definition_marker.containDefinitions(sentences)
+            print("done filtering:" + str(i))
+
+    test_stress(sentences)
