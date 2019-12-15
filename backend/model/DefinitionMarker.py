@@ -19,6 +19,17 @@ class DefinitionMarker:
                 write_value(sent, "0", out)
         out.close()
 
+    def MakeWekaFile(self, data):
+        '''Generate a file for Weka'''
+        out = open("weka_file.arff", "w")
+        out.write("@relation isDefinition" + '\n' + '\n' + "@attribute sentence string" + '\n' + "@attribute marker numeric" + '\n' + '\n' + "@data" + '\n')
+        for sent in data:
+            if is_definition(sent):
+                out.write(("'" + sent + "'" + " 1" + '\n').encode("utf-8"))
+            else:
+                out.write(("'" + sent + "'" + " 0" + '\n').encode("utf-8"))
+        out.close()
+
     def tagSentence(self, sentence):
         pass
 

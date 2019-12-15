@@ -20,10 +20,11 @@ if __name__ == "__main__":
     definition_marker.input_file = corpus.input_file
 
     print("\n########### Este definitie?:")
+    definition_marker.MakeWekaFile(sentences)
     #definition_marker.containDefinitions(sentences)
 
     def test_stress(sentences):
-        for i in range(50):
+        for i in range(1):
             definition_marker.containDefinitions(sentences)
             print("done filtering:" + str(i))
 
