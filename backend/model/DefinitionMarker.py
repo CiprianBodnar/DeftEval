@@ -1,30 +1,33 @@
-from backend.model.SentenceTokenise import SentenceTokenise
-from backend.service.WriteInFormat import write_sentence_in_format
-sentences = SentenceTokenise()
+from backend.service.WriteInFormat import write_value
+from backend.service.Features import is_definition
+import io
 base_output_folder = "../output"
+
 
 class DefinitionMarker:
     def __init__(self):
         self.input_file = ""
         pass
 
-    def isDefinition(self, sent):
-
-        definitors = ['is', 'define', 'defined', 'are', 'of']
-        if any(d in sentences.WordTokenize(sent) for d in definitors):
-            return True
-        else:
-            return False
-
     def containDefinitions(self, data):
         deft_file = self.input_file.replace(".txt", ".deft")
-        out = open(deft_file, "w", encoding="utf8")
+        out = io.open(deft_file, "w", encoding="utf8")
         for sent in data:
-            write_sentence_in_format(sent, self.input_file, out)
-            if self.isDefinition(sent):
-                print("Este definitie:", sent.encode("utf-8"))
+            if is_definition(sent):
+                write_value(sent,"1", out)
             else:
-                print("NU este definitie:", sent.encode("utf-8"))
+                write_value(sent, "0", out)
+        out.close()
+
+    def MakeWekaFile(self, data):
+        '''Generate a file for Weka'''
+        out = open("weka_file.arff", "w")
+        out.write("@relation isDefinition" + '\n' + '\n' + "@attribute sentence string" + '\n' + "@attribute marker numeric" + '\n' + '\n' + "@data" + '\n')
+        for sent in data:
+            if is_definition(sent):
+                out.write(("'" + sent + "'" + " 1" + '\n').encode("utf-8"))
+            else:
+                out.write(("'" + sent + "'" + " 0" + '\n').encode("utf-8"))
         out.close()
 
     def tagSentence(self, sentence):

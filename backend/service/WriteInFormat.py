@@ -17,23 +17,9 @@ def write(list_of_words, out, input_file):
     global start_tag
     for line in list_of_words:
         # write line to output file
-        if line != "":
-            out.write(line)
-            out.write("\t")
-            out.write(input_file)
-            out.write("\t")
-            out.write(str(start_tag))
-            out.write("\t")
-            out.write(str(start_tag + len(line)))
-            start_tag = start_tag + len(line) + 1
-            out.write("\t")
-            out.write("NA")
-            out.write("\t")
-            out.write("NA")
-            out.write("\t")
-            out.write("NA")
-            out.write("\t")
-            out.write("NA")
-            # TODO to complete here with rest of output model
-            out.write("\n")
-    out.write("\n")
+        pass
+
+def write_value(sentence, value, out):
+    out.write(sentence+" "+value+"\n")
+
+
