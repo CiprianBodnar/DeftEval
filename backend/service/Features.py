@@ -11,6 +11,15 @@ true_points = 0
 false_points = 0
 
 
+def remove_punctution( sent):
+    '''remove punctuation from sentemce'''
+    punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    no_punct = ""
+    for char in sent:
+        if char not in punctuations:
+            no_punct = no_punct + char
+    return no_punct
+
 def check_present_tence(sent):
     """check verbs are in present form"""
     global false_points, true_points
@@ -28,6 +37,16 @@ def get_middle_sentence(sent):
     sent_len = len(sent)
     return sent_len / 3, sent_len - sent_len / 3
 
+def number_of_words_sentence(sent, n):
+    '''check if sentence has more than n words'''
+    global true_points, false_points
+    sent = remove_punctution(sent)
+    words = sentences.WordTokenize(sent)
+    if len(words) > 3:
+        true_points = true_points + 1
+        return True
+    false_points = false_points + 1
+    return False
 
 def contain_punctuation(sent, punctuation):
     '''check if the middle of the sentence has punctuation mark(such as s hyphen or colon'''
@@ -154,6 +173,7 @@ def is_definition(sent):
     contain_chunk_location(sent)
     contain_chunk_person(sent)
     contain_chunk_organization(sent)
+    number_of_words_sentence(sent, 3)
     # print(true_points)
     # print(false_points)
     if true_points >= false_points:

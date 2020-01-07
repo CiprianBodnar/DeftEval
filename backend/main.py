@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     print("\n########### Este definitie?:")
     definition_marker.MakeWekaFile(sentences)
-    #definition_marker.containDefinitions(sentences)
+    definition_marker.containDefinitions(sentences)
 
     def test_stress(sentences):
         for i in range(1):

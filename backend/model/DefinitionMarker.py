@@ -63,31 +63,27 @@ class DefinitionMarker:
         tag = pos_tag(list)
         for i in range(len(tag)):
             if "VB" in tag[i][1]:
-                return (list[i])
-        return str(list[0])
+                return list[i].encode("utf-8")
+        return " "
 
     def hypernym_word(self, word):
         '''returns the hypernym of a word'''
         syn = wn.synsets(word)
-        print ("syyn",syn)
         if syn is not None:
             if syn[0].hypernyms()[0] is not None:
                 hyp = syn[0].hypernyms()[0]
                 hyp = str(hyp)
             else: hyp = str(syn[0])
-            print ("hyyp1", hyp)
             hyp = hyp.split('Synset(')[1].split(')')[0]
-            print ("hyyp2",hyp)
             return hyp
         return str(syn)
 
     def MakeWekaFile(self, data):
         '''Generate a file for Weka'''
         out = open("weka_file.arff", "w")
-        out.write("@relation isDefinition" + '\n' + '\n' + "@attribute sentence string" + '\n' + "@attribute contain_definitors numeric"  + '\n' + "@attribute contain_punctuation_- numeric" +  '\n' + "@attribute contain_punctuation_: numeric" '\n' + "@attribute contain_articulated_noun numeric" '\n' + "@attribute contain_isA numeric" '\n' + "@attribute contain_toBe numeric" '\n' + "@attribute contain_toBe_called numeric" '\n' + "@attribute check_present_tence numeric" '\n' + "@attribute contain_chunk_location numeric" '\n' + "@attribute contain_chunk_person numeric" '\n' + "@attribute contain_chunk_organization numeric" '\n' + '\n' + "@data" + '\n')
+        out.write("@relation isDefinition" + '\n' + '\n' + "@attribute verb string" + '\n' + "@attribute contain_definitors numeric"  + '\n' + "@attribute contain_punctuation_- numeric" +  '\n' + "@attribute contain_punctuation_: numeric" '\n' + "@attribute contain_articulated_noun numeric" '\n' + "@attribute contain_isA numeric" '\n' + "@attribute contain_toBe numeric" '\n' + "@attribute contain_toBe_called numeric" '\n' + "@attribute check_present_tence numeric" '\n' + "@attribute contain_chunk_location numeric" '\n' + "@attribute contain_chunk_person numeric" '\n' + "@attribute contain_chunk_organization numeric" '\n' +  "@attribute number_of_words_sentence" '\n' + '\n' + "@data" + '\n')
         for sent in data:
-            print ("aa",self.extract_verb(sent))
-            #out.write(str(self.extract_verb(sent)) + str(int(is_definition(sent) == True)) + ", " + str(int(contain_definitors(sent) == True)) + ", " + str(int(contain_punctuation(sent, '-') == True)) + ", " + str(int(contain_punctuation(sent, ':') == True)) + ", " + str(int(contain_articulated_noun(sent)== True)) + ", " + str(int(contain_isA(sent) == True)) + ", " + str(int(contain_toBe(sent) == True)) + ", " + str(int(contain_toBe_called(sent) == True)) + ", " + str(int(check_present_tence(sent) == True)) + ", " + str(int(contain_chunk_location(sent) == True)) + ", " + str(int(contain_chunk_person(sent) == True)) + ", " + str(int(contain_chunk_organization(sent) == True))  + '\n').encode("utf-8"))
+            out.write(self.extract_verb(sent) + " " + str(int(is_definition(sent) == True)) + ", " + str(int(contain_definitors(sent) == True)) + ", " + str(int(contain_punctuation(sent, '-') == True)) + ", " + str(int(contain_punctuation(sent, ':') == True)) + ", " + str(int(contain_articulated_noun(sent)== True)) + ", " + str(int(contain_isA(sent) == True)) + ", " + str(int(contain_toBe(sent) == True)) + ", " + str(int(contain_toBe_called(sent) == True)) + ", " + str(int(check_present_tence(sent) == True)) + ", " + str(int(contain_chunk_location(sent) == True)) + ", " + str(int(contain_chunk_person(sent) == True)) + ", " + str(int(contain_chunk_organization(sent) == True)) + ", " + str(int(number_of_words_sentence(sent, 3) == True))  + '\n')
         out.close()
 
     def tagSentence(self, sentence):
