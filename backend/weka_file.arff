@@ -1,242 +1,245 @@
 @relation isDefinition
 
-@attribute verb string
-@attribute contain_definitors numeric
-@attribute contain_punctuation_- numeric
-@attribute contain_punctuation_: numeric
-@attribute contain_articulated_noun numeric
-@attribute contain_isA numeric
-@attribute contain_toBe numeric
-@attribute contain_toBe_called numeric
-@attribute check_present_tence numeric
-@attribute contain_chunk_location numeric
-@attribute contain_chunk_person numeric
-@attribute contain_chunk_organization numeric
-@attribute number_of_words_sentence
+@attribute Predicate-verb {include, relate, contain, think, be, extrapolate, have, use, summarize, combine, transport, uranium—have, occur, show, continue, replace, state, reach, water’s, overflow, stay, consist, ring, do, provide, di, release, cover, prevent, lead, carry, give, mean, direct, unknow, understand, remember, view, look, play, singular, propose, waterhating, interact, serve, move, facilitate, exist, allow, imagine, live, constrict, lose, call, pass, inwardfacing, extend, form, break, illustrate, pathways, refer, proceed, link, increase, cause, affect, bind, regulate, strip, convert, phosphofructose, deliver, fungi, synthesize, embed, enclose, take, harvest, differentiate}
+@attribute Subject-noun {science, field, museum, reason, reasoning, principle, experiment, part, control, contrast, structure, reference, section, material, description, conclusion, paper, cell, organelle, organ, instance, organism, example, evolution, tree, nature, atom, number, isotopesisotopes, carbon, property, element, innermost, octet, chemical, substance, reactant, oxygen, reaction, back, situation, ion, anion, certain, sport, nucleus, way, hydrogen, van, water’s, water, heat, boiling, cohesion, type, macromolecule, component, hydrocarbon, isomer, molecule, monomer, carbohydrate, disaccharide, process, lipid, oleic, wax, protein, change, sequence, nucleic, blueprint, cytosine, carbonnitrogen, sense, blood, pass, prokaryote, phospholipid, =, look, chromatin, chromosome, ribosome, electron, linkb, vacuole, filament, function, cilium, hairlike, junction, explanation, model, hydrophilic, hydrophobic, transport, space, transportin, concentration, passage, aquaporins, beaker, side, volume, isotonic, system, plasmolysis, plant, energy, membrane, symporter, antiporter, transporter, preparation, portion, variation, cavity, scientist, breakdown, pathway, catabolic, entropy, bond, ∆g, think, state, temperature, ph, inhibitor, enzyme, oxidation, method, glycolysis, living, step, isomerase, presence, reticulum, fmn, group, food, gas, stoma, chloroplast, photosynthesis, spectrum, difference}
+@attribute Subject-hypernym {discipline, tract, depository, rational_motive, thinking, generalization, scientific_research, relation, power, opposition, artifact, remark, music, substance, statement, judgment, material, compartment, organ, body_part, happening, living_thing, information, process, woody_plant, quality, amount, isotopesisotopes, chemical_element, possession, part, inmost, digit, matter, chemical, chemical_process, state, particle, ion, certain, diversion, organelle, property, artistic_movement, water’s, binary_compound, energy, heating, connection, kind, molecule, organic_compound, compound, unit, macromolecule, oligosaccharide, activity, oleic, lipid, series, nucleic, plan, pyrimidine, carbonnitrogen, awareness, liquid_body_substance, accomplishment, organism, =, countenance, body_substance, body, lepton, linkb, cavity, fiber, mathematical_relation, capillary, topographic_point, hypothesis, hydrophilic, hydrophobic, instrumentality, attribute, transportin, change_of_state, aquaporins, jar, region, measure, isotonic, plasmolysis, building_complex, physical_phenomenon, sheet, symporter, antiporter, truck, change, hole, person, disruption, white_matter, catabolic, information_measure, attraction, ∆g, deliberation, administrative_district, fundamental_quantity, hydrogen_ion_concentration, catalyst, chemical_reaction, know-how, metabolism, experience, maneuver, enzyme, being, reticulum, fmn, abstraction, state_of_matter, aperture, plastid, array}
+@attribute contain_definitors {0,1}
+@attribute contain_punctuation_- {0,1}
+@attribute contain_punctuation_: {0,1}
+@attribute contain_articulated_noun {0,1}
+@attribute contain_isA {0,1}
+@attribute contain_toBe {0,1}
+@attribute contain_toBe_called {0,1}
+@attribute check_present_tence {0,1}
+@attribute contain_chunk_location {0,1}
+@attribute contain_chunk_person {0,1}
+@attribute contain_chunk_organization {0,1}
+@attribute min_words_in_sentence {0,1}
+@attribute class {No,Yes}
 
 @data
-includes 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1
-related 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-contain 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-thinking 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1
-extrapolate 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-have 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-contains 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-use 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-be 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-includes 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-be 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-summarizes 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-were 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-contain 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-combine 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-transports 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-be 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-using 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-contain 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-contain 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-uranium—have 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-have 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-has 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-occur 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1
-used 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-shown 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-continues 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1
-are 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1
-replace 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-occurs 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-has 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-stating 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1
-occur 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1
-is 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1
-has 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1
-is 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1
-reaches 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1
-water’s 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1
-overflows 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-stay 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-are 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-have 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-consists 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-Ring 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-shown 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-be 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-combine 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
-doing 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-provide 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1
-have 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-di 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-releasing 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-include 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1
-is 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-contains 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1
-covers 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1
-prevent 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-be 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1
-lead 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-has 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1
-carry 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1
-are 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1
-has 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-give 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-means 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1
-have 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1
-directs 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-  0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
-understand 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-remember 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1
-viewed 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-look 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-plays 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-Have 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-have 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-is 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1
-has 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-singular 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1
-is 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-proposed 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1
-has 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-look 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-waterhating 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1
-interact 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-serve 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-move 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1
-Facilitated 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-exists 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-allows 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-Imagine 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-used 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-has 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-living 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-constricts 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1
-lose 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-called 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1
-pass 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1
-carries 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
-carries 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-carries 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-transport 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-inwardfacing 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-extends 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1
-uses 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-form 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-use 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-breaking 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1
-illustrates 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1
-pathways 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-refer 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-means 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1
-is 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1
-exists 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1
-means 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-have 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1
-is 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1
-is 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-is 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1
-proceed 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-exist 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-link 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-increasing 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-cause 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-affect 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-bind 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1
-regulated 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-strips 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1
-occur 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1
-is 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1
-have 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1
-carry 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-converts 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-phosphofructose 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-delivers 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-is 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-is 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-living 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-use 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-living 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-use 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1
-fungi 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1
-synthesize 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-called 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-regulated 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1
-are 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1
-are 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-Embedded 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-encloses 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-takes 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1
-harvested 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
-differentiate 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1
-is 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1
-carried 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+include, science, discipline, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, No
+relate, field, tract, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+contain, museum, depository, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+think, reason, rational_motive, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, reasoning, thinking, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, No
+extrapolate, principle, generalization, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+have, experiment, scientific_research, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, part, relation, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+contain, control, power, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+use, contrast, opposition, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, science, discipline, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, No
+be, structure, artifact, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, reference, remark, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, section, music, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+include, material, substance, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, description, statement, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+summarize, conclusion, judgment, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, paper, material, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+contain, cell, compartment, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, No
+be, organelle, organ, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+combine, cell, compartment, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, No
+be, organ, body_part, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+transport, instance, happening, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, organism, living_thing, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, example, information, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, evolution, process, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, tree, woody_plant, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, No
+be, tree, woody_plant, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, No
+be, field, tract, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+use, nature, quality, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, atom, substance, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+contain, atom, substance, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+contain, atom, substance, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, number, amount, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, number, amount, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, isotopesisotopes, isotopesisotopes, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+uranium—have, carbon, chemical_element, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, property, possession, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+have, element, part, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+have, innermost, inmost, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+be, octet, digit, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, No
+be, example, information, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+occur, chemical, material, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, No
+use, substance, matter, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, No
+be, reactant, chemical, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+show, oxygen, chemical_element, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, No
+be, reaction, chemical_process, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+continue, back, body_part, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, situation, state, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, ion, particle, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, No
+be, anion, ion, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, Yes
+be, certain, certain, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, No
+replace, sport, diversion, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+occur, nucleus, organelle, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+have, oxygen, chemical_element, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+state, way, property, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, hydrogen, chemical_element, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, No
+be, hydrogen, chemical_element, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, No
+occur, van, artistic_movement, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, No
+be, water’s, water’s, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, Yes
+have, water, binary_compound, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, No
+be, heat, energy, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, Yes
+reach, water, binary_compound, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, No
+water’s, boiling, heating, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, No
+overflow, water, binary_compound, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+stay, water, binary_compound, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, cohesion, connection, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, water, binary_compound, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, type, kind, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, No
+be, cell, compartment, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, macromolecule, molecule, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, component, part, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+have, hydrocarbon, organic_compound, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+consist, type, kind, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+ring, structure, artifact, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+show, isomer, compound, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, example, information, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, molecule, unit, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, carbon, chemical_element, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, molecule, unit, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, macromolecule, molecule, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+combine, monomer, compound, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, No
+do, monomer, compound, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, carbohydrate, macromolecule, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+provide, carbohydrate, macromolecule, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, No
+have, carbohydrate, macromolecule, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+di, disaccharide, oligosaccharide, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+release, process, activity, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+include, lipid, macromolecule, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, No
+be, hydrocarbon, organic_compound, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+contain, hydrocarbon, organic_compound, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, oleic, oleic, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, Yes
+cover, wax, lipid, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, No
+prevent, nature, quality, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, protein, macromolecule, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, protein, macromolecule, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, protein, macromolecule, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, No
+lead, change, happening, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, protein, macromolecule, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, sequence, series, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+have, example, information, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, structure, artifact, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, No
+be, structure, artifact, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, nucleic, nucleic, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, No
+carry, blueprint, plan, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+be, structure, artifact, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, No
+be, cytosine, pyrimidine, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, No
+have, carbonnitrogen, carbonnitrogen, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+give, sense, awareness, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+mean, blood, liquid_body_substance, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, pass, accomplishment, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, No
+have, prokaryote, organism, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, phospholipid, lipid, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, No
+be, nucleus, organelle, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, No
+direct, =, =, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+unknow, look, countenance, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, No
+understand, chromatin, body_substance, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, No
+be, chromosome, body, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+remember, prokaryote, organism, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, ribosome, organelle, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, No
+view, electron, lepton, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+look, linkb, linkb, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+play, vacuole, cavity, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+have, water, binary_compound, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+have, filament, fiber, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+be, function, mathematical_relation, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, No
+have, cell, compartment, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+singular, cilium, organelle, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, hairlike, capillary, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, No
+be, junction, topographic_point, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, No
+be, cell, compartment, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+propose, explanation, statement, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, Yes
+have, model, hypothesis, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+look, hydrophilic, hydrophilic, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+waterhating, hydrophobic, hydrophobic, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, No
+interact, molecule, unit, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, protein, macromolecule, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+serve, protein, macromolecule, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+move, transport, instrumentality, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, space, attribute, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, No
+facilitate, transportin, transportin, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+exist, concentration, property, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+allow, passage, change_of_state, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, No
+be, aquaporins, aquaporins, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+imagine, beaker, jar, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+be, side, region, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, volume, measure, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+use, isotonic, isotonic, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+have, situation, state, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+live, system, instrumentality, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+constrict, cell, compartment, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, plasmolysis, plasmolysis, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, No
+lose, plant, building_complex, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, energy, physical_phenomenon, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+call, transport, instrumentality, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, No
+pass, substance, matter, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, membrane, sheet, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+carry, ion, particle, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, No
+carry, symporter, symporter, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+carry, antiporter, antiporter, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+transport, transporter, truck, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+inwardfacing, preparation, activity, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+extend, portion, relation, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, variation, change, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, Yes
+use, process, activity, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+form, cavity, hole, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+use, scientist, person, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+break, process, activity, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, No
+illustrate, breakdown, disruption, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, pathway, white_matter, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, No
+pathways, catabolic, catabolic, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, No
+be, energy, physical_phenomenon, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+refer, scientist, person, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+mean, entropy, information_measure, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, No
+be, bond, attraction, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, No
+exist, type, kind, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, No
+be, chemical, material, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, No
+mean, ∆g, ∆g, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+have, reaction, chemical_process, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, No
+be, think, deliberation, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, Yes
+be, energy, physical_phenomenon, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, state, administrative_district, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, Yes
+proceed, reason, rational_motive, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+exist, bond, attraction, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+link, bond, attraction, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, bond, attraction, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+increase, temperature, fundamental_quantity, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+cause, temperature, fundamental_quantity, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+affect, ph, hydrogen_ion_concentration, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+bind, inhibitor, substance, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, type, kind, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, Yes
+regulate, enzyme, catalyst, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+strip, oxidation, chemical_reaction, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, No
+occur, oxidation, chemical_reaction, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, Yes
+be, method, know-how, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, No
+have, energy, physical_phenomenon, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, glycolysis, metabolism, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, No
+carry, living, experience, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+convert, step, maneuver, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, isomerase, enzyme, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+phosphofructose, change, happening, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+deliver, presence, being, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, pathway, white_matter, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, Yes
+be, reticulum, reticulum, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, fmn, fmn, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+be, group, abstraction, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, Yes
+be, group, abstraction, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+live, system, instrumentality, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+use, process, activity, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+live, contrast, opposition, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, No
+use, food, substance, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, No
+fungi, organism, living_thing, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, No
+synthesize, group, abstraction, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, No
+call, process, activity, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+regulate, gas, state_of_matter, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+be, stoma, aperture, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, No
+be, chloroplast, plastid, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+embed, membrane, sheet, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+enclose, membrane, sheet, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+take, photosynthesis, chemical_process, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, No
+be, reaction, chemical_process, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, No
+harvest, reaction, chemical_process, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No
+differentiate, scientist, person, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, No
+be, spectrum, array, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, No
+carry, difference, quality, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, No

@@ -11,7 +11,7 @@ true_points = 0
 false_points = 0
 
 
-def remove_punctution( sent):
+def remove_punctuation( sent):
     '''remove punctuation from sentemce'''
     punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
     no_punct = ""
@@ -37,10 +37,10 @@ def get_middle_sentence(sent):
     sent_len = len(sent)
     return sent_len / 3, sent_len - sent_len / 3
 
-def number_of_words_sentence(sent, n):
+def min_words_in_sentence(sent, n):
     '''check if sentence has more than n words'''
     global true_points, false_points
-    sent = remove_punctution(sent)
+    sent = remove_punctuation(sent)
     words = sentences.WordTokenize(sent)
     if len(words) > 3:
         true_points = true_points + 1
@@ -173,7 +173,7 @@ def is_definition(sent):
     contain_chunk_location(sent)
     contain_chunk_person(sent)
     contain_chunk_organization(sent)
-    number_of_words_sentence(sent, 3)
+    min_words_in_sentence(sent, 3)
     # print(true_points)
     # print(false_points)
     if true_points >= false_points:
