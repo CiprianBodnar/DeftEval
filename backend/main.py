@@ -5,7 +5,7 @@ from backend.model.TaggedDefinition import TaggedDefinition
 
 from nltk.corpus import wordnet as wn
 import nltk
-import thread
+#import thread
 import time
 import re
 
@@ -28,5 +28,5 @@ if __name__ == "__main__":
 
     def test_stress(sentences):
         for i in range(1):
-            definition_marker.containDefinitions(sentences)
+           # definition_marker.containDefinitions(sentences)
             print("done filtering:" + str(i))

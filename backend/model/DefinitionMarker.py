@@ -43,8 +43,8 @@ class DefinitionMarker:
         punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
         no_punct = ""
         for char in sent:
-            if char not in punctuations:
-                no_punct = no_punct + char
+            if str(char) not in punctuations:
+                no_punct = no_punct + str(char)
         return no_punct
 
     def extract_subject(self,sent):
@@ -88,9 +88,10 @@ class DefinitionMarker:
             if self.extract_verb(sent) not in (self.remove_punctuation(open("list_verbs.txt").read()).split()):
                 out2 = open("list_verbs.txt", "a")
                 if os.stat("list_verbs.txt").st_size == 0:
-                    out2.write(self.extract_verb(sent))
+                    out2.write(str(self.extract_verb(sent)))
                 else:
-                    out2.write(", " + self.extract_verb(sent))
+                    out2.write(", " + str(self.extract_verb(sent)))
+
                 out2.close()
 
         #generate list_nouns
@@ -98,9 +99,10 @@ class DefinitionMarker:
              if self.extract_subject(sent) not in (self.remove_punctuation(open("list_nouns.txt").read()).split()):
                 out2 = open("list_nouns.txt", "a")
                 if os.stat("list_nouns.txt").st_size == 0:
-                    out2.write(self.extract_subject(sent))
+                    out2.write(str(self.extract_subject(sent)))
                 else:
-                    out2.write(", " + self.extract_subject(sent))
+                    out2.write(", " + str(self.extract_subject(sent)))
+
                 out2.close()
 
         #generate list hypernyms
@@ -108,16 +110,22 @@ class DefinitionMarker:
             if self.remove_punctuation(self.hypernym_word(self.extract_subject(sent))) not in (self.remove_punctuation(open("list_hypernyms.txt").read()).split()):
                 out2 = open("list_hypernyms.txt", "a")
                 if os.stat("list_hypernyms.txt").st_size == 0:
-                    out2.write(self.hypernym_word(self.extract_subject(sent)))
+                    out2.write(str(self.hypernym_word(self.extract_subject(sent))))
                 else:
-                    out2.write(", " + self.hypernym_word(self.extract_subject(sent)))
+                    out2.write(", " + str(self.hypernym_word(self.extract_subject(sent))))
                 out2.close()
-
+        deft_file = self.input_file.replace(".txt", ".deft")
+        out_deft = io.open(deft_file, "w", encoding="utf8")
         out = open("weka_file.arff", "w")
         out.write("@relation isDefinition" + '\n' + '\n' + "@attribute Predicate-verb {" + open("list_verbs.txt", "r").read() + "}" + '\n' + "@attribute Subject-noun {" + open("list_nouns.txt", "r").read() + "}" + '\n' + "@attribute Subject-hypernym {" + open("list_hypernyms.txt", "r").read() + "}" + '\n'+ "@attribute contain_definitors {0,1}"  + '\n' + "@attribute contain_punctuation_- {0,1}" +  '\n' + "@attribute contain_punctuation_: {0,1}" '\n' + "@attribute contain_articulated_noun {0,1}" '\n' + "@attribute contain_isA {0,1}" '\n' + "@attribute contain_toBe {0,1}" '\n' + "@attribute contain_toBe_called {0,1}" '\n' + "@attribute check_present_tence {0,1}" '\n' + "@attribute contain_chunk_location {0,1}" '\n' + "@attribute contain_chunk_person {0,1}" '\n' + "@attribute contain_chunk_organization {0,1}" '\n' +  "@attribute min_words_in_sentence {0,1}" '\n' +  "@attribute class {No,Yes}" '\n' + '\n' + "@data" + '\n')
         for sent in data:
-            out.write(self.extract_verb(sent) +  ", " + self.extract_subject(sent) +  ", " + self.hypernym_word(self.extract_subject(sent)) +", " + str(int(contain_definitors(sent) == True)) + ", " + str(int(contain_punctuation(sent, '-') == True)) + ", " + str(int(contain_punctuation(sent, ':') == True)) + ", " + str(int(contain_articulated_noun(sent)== True)) + ", " + str(int(contain_isA(sent) == True)) + ", " + str(int(contain_toBe(sent) == True)) + ", " + str(int(contain_toBe_called(sent) == True)) + ", " + str(int(check_present_tence(sent) == True)) + ", " + str(int(contain_chunk_location(sent) == True)) + ", " + str(int(contain_chunk_person(sent) == True)) + ", " + str(int(contain_chunk_organization(sent) == True)) + ", " + str(int(min_words_in_sentence(sent, 3) == True))  + ", " + ("Yes" if int(is_definition(sent) == True) else "No") + '\n')
+            out.write(str(self.extract_verb(sent)) +  ", " + str(self.extract_subject(sent)) +  ", " + str(self.hypernym_word(self.extract_subject(sent))) +", " + str(int(contain_definitors(sent) == True)) + ", " + str(int(contain_punctuation(sent, '-') == True)) + ", " + str(int(contain_punctuation(sent, ':') == True)) + ", " + str(int(contain_articulated_noun(sent)== True)) + ", " + str(int(contain_isA(sent) == True)) + ", " + str(int(contain_toBe(sent) == True)) + ", " + str(int(contain_toBe_called(sent) == True)) + ", " + str(int(check_present_tence(sent) == True)) + ", " + str(int(contain_chunk_location(sent) == True)) + ", " + str(int(contain_chunk_person(sent) == True)) + ", " + str(int(contain_chunk_organization(sent) == True)) + ", " + str(int(min_words_in_sentence(sent, 3) == True))  + ", " + ("Yes" if int(is_definition(sent) == True) else "No") + '\n')
+            if int(is_definition(sent) == True):
+                write_value(sent, "1", out_deft)
+            else:
+                write_value(sent, "0", out_deft)
         out.close()
+
 
     def tagSentence(self, sentence):
         pass
