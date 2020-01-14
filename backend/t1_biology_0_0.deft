@@ -59,7 +59,7 @@ Hydrogen bonds are also responsible for zipping together the DNA double helix.Li
 Van der Waals attractions can occur between any two or more molecules and are dependent on slight fluctuations of the electron densities, which are not always symmetrical around an atom. 0
 Water’s high heat capacity is a property caused by hydrogen bonding among water molecules. 1
 Water has the highest specific heat capacity of any liquids. 0
-Specific heat is defined as the amount of heat one gram of a substance must absorb or lose to change its temperature by one degree Celsius. 0
+Specific heat is defined as the amount of heat one gram of a substance must absorb or lose to change its temperature by one degree Celsius. 1
 Eventually, as water reaches its boiling point of 100° Celsius (212° Fahrenheit), the heat is able to break the hydrogen bonds between the water molecules, and the kinetic energy (motion) between the water molecules allows them to escape from the liquid as a gas. 0
 Even when below its boiling point, water’s individual molecules acquire enough energy from other water molecules such that some surface water molecules can escape and vaporize: this process is known as evaporation. 0
 Before it overflows, the water forms a dome-like shape above the rim of the glass. 0
@@ -89,7 +89,7 @@ During this process, the hydroxyl group of one monosaccharide combines with the 
 Lipids include a diverse group of compounds that are largely nonpolar in nature. 0
 This is because they are hydrocarbons that include mostly nonpolar carbon–carbon or carbon–hydrogen bonds. 0
 When the hydrocarbon chain contains a double bond, the fatty acid is said to be unsaturated. 0
-Oleic acid is an example of an unsaturated fatty acid ([link]). 0
+Oleic acid is an example of an unsaturated fatty acid ([link]). 1
 Wax covers the feathers of some aquatic birds and the leaf surfaces of some plants. 0
 Because of the hydrophobic nature of waxes, they prevent water from sticking on the surface ([link]). 0
 Proteins are one of the most abundant organic molecules in living systems and have the most diverse range of functions of all macromolecules. 0
@@ -129,7 +129,7 @@ When cilia (singular = cilium) are present, however, many of them extend along t
 They are short, hair-like structures that are used to move entire cells (such as paramecia) or substances along the outer surface of the cell (for example, the cilia of cells lining the Fallopian tubes that move the ovum toward the uterus, or cilia lining the cells of the respiratory tract that trap particulate matter and move it toward your nostrils. 0
 A tight junction is a watertight seal between two adjacent animal cells ([link]). 0
 The cells are held tightly against each other by proteins (predominantly two proteins called claudins and occludins).Tight junctions form watertight connections between adjacent animal cells. 0
-The explanation proposed by Singer and Nicolson is called the fluid mosaic model. 0
+The explanation proposed by Singer and Nicolson is called the fluid mosaic model. 1
 The model has evolved somewhat over time, but it still best accounts for the structure and functions of the plasma membrane as we now understand them. 0
 The hydrophilic or “water-loving” areas of these molecules (which look like a collection of balls in an artist’s rendition of the model) ([link]) are in contact with the aqueous fluid both inside and outside the cell. 0
 Hydrophobic, or water-hating molecules, tend to be non-polar. 0
@@ -161,7 +161,7 @@ An antiporter also carries two different ions or molecules, but in different dir
 All of these transporters can also transport small, uncharged organic molecules like glucose. 0
 In preparation for phagocytosis, a portion of the inward-facing surface of the plasma membrane becomes coated with a protein called clathrin, which stabilizes this section of the membrane. 0
 The coated portion of the membrane then extends from the body of the cell and surrounds the particle, eventually enclosing it. 0
-A variation of pinocytosis is called potocytosis. 0
+A variation of pinocytosis is called potocytosis. 1
 This process uses a coating protein, called caveolin, on the cytoplasmic side of the plasma membrane, which performs a similar function to clathrin. 0
 The cavities in the plasma membrane that form the vacuoles have membrane receptors and lipid rafts in addition to caveolin. 0
 Scientists use the term bioenergetics to discuss the concept of energy flow ([link]) through living systems, such as cells. 0
@@ -177,9 +177,9 @@ The type of potential energy that exists within chemical bonds, and is released 
 Chemical energy is responsible for providing living cells with energy from food. 0
 A negative ∆G also means that the products of the reaction have less free energy than the reactants, because they gave off some free energy during the reaction. 0
 Reactions that have a negative ∆G and consequently release free energy are called exergonic reactions. 0
-Think: exergonic means energy is exiting the system. 0
+Think: exergonic means energy is exiting the system. 1
 A small energy input is required to achieve this contorted state. 0
-This contorted state is called the transition state, and it is a high-energy, unstable state. 0
+This contorted state is called the transition state, and it is a high-energy, unstable state. 1
 For this reason, reactant molecules don’t last long in their transition state, but very quickly proceed to the next steps of the chemical reaction. 0
 However, not all bonds within this molecule exist in a particularly high-energy state. 0
 Both bonds that link the phosphates are equally high-energy bonds (phosphoanhydride bonds) that, when broken, release sufficient energy to power a variety of cellular reactions and processes. 0
@@ -188,10 +188,10 @@ However, increasing or decreasing the temperature outside of an optimal range ca
 High temperatures will eventually cause enzymes, like other biological molecules, to denature, a process that changes the natural properties of a substance. 0
 Likewise, the pH of the local environment can also affect enzyme function. 0
 Some inhibitor molecules bind to enzymes in a location where their binding induces a conformational change that reduces the affinity of the enzyme for its substrate. 0
-This type of inhibition is called allosteric inhibition ([link]). 0
+This type of inhibition is called allosteric inhibition ([link]). 1
 Most allosterically regulated enzymes are made up of more than one polypeptide, meaning that they have more than one protein subunit. 0
 An oxidation reaction strips an electron from an atom in a compound, and the addition of this electron to another compound is a reduction reaction. 0
-Because oxidation and reduction usually occur together, these pairs of reactions are called oxidation reduction reactions, or redox reactions.Electrons and Energy A phosphate group is removed from an intermediate reactant in the pathway, and the free energy of the reaction is used to add the third phosphate to an available ADP molecule, producing ATP ([link]). 0
+Because oxidation and reduction usually occur together, these pairs of reactions are called oxidation reduction reactions, or redox reactions.Electrons and Energy A phosphate group is removed from an intermediate reactant in the pathway, and the free energy of the reaction is used to add the third phosphate to an available ADP molecule, producing ATP ([link]). 1
 This very direct method of phosphorylation is called substrate-level phosphorylation. 0
 You have read that nearly all of the energy used by living cells comes to them in the bonds of the sugar, glucose. 0
 Glycolysis is the first step in the breakdown of glucose to extract energy for cellular metabolism. 0
@@ -200,10 +200,10 @@ In the second step of glycolysis, an isomerase converts glucose-6-phosphate into
 An isomerase is an enzyme that catalyzes the conversion of a molecule into one of its isomers. 0
 (This change from phosphoglucose to phosphofructose allows the eventual split of the sugar into two three-carbon molecules. 0
 In the presence of oxygen, acetyl CoA delivers its acetyl group to a four-carbon molecule, oxaloacetate, to form citrate, a six-carbon molecule with three carboxyl groups; this pathway will harvest the remainder of the extractable energy from what began as a glucose molecule. 0
-This single pathway is called by different names: the citric acid cycle (for the first intermediate formed—citric acid, or citrate—when acetate joins to the oxaloacetate), the TCA cycle (since citric acid or citrate and isocitrate are tricarboxylic acids), and the Krebs cycle, after Hans Krebs, who first identified the steps in the pathway in the 1930s in pigeon flight muscles. 0
+This single pathway is called by different names: the citric acid cycle (for the first intermediate formed—citric acid, or citrate—when acetate joins to the oxaloacetate), the TCA cycle (since citric acid or citrate and isocitrate are tricarboxylic acids), and the Krebs cycle, after Hans Krebs, who first identified the steps in the pathway in the 1930s in pigeon flight muscles. 1
 The rough endoplasmic reticulum (RER) is so named because the ribosomes attached to its cytoplasmic surface give it a studded appearance when viewed through an electron microscope ([link]). 0
 FMN, which is derived from vitamin B2, also called riboflavin, is one of several prosthetic groups or co-factors in the electron transport chain. 0
-A prosthetic group is a non-protein molecule required for the activity of a protein. 0
+A prosthetic group is a non-protein molecule required for the activity of a protein. 1
 Prosthetic groups are organic or inorganic, non-peptide molecules bound to a protein that facilitate its function; prosthetic groups include co-enzymes, which are the prosthetic groups of enzymes. 0
 Some living systems use an organic molecule as the final electron acceptor. 0
 Processes that use an organic molecule to regenerate NAD+ from NADH are collectively referred to as fermentation. 0

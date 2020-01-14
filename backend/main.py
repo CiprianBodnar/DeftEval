@@ -3,8 +3,11 @@ from backend.model.DefinitionMarker import DefinitionMarker
 from backend.model.SentenceTokenise import SentenceTokenise
 from backend.model.TaggedDefinition import TaggedDefinition
 
-import thread
+from nltk.corpus import wordnet as wn
+import nltk
+#import thread
 import time
+import re
 
 if __name__ == "__main__":
     corpus = Corpus()
@@ -25,7 +28,5 @@ if __name__ == "__main__":
 
     def test_stress(sentences):
         for i in range(1):
-            definition_marker.containDefinitions(sentences)
+           # definition_marker.containDefinitions(sentences)
             print("done filtering:" + str(i))
-
-    test_stress(sentences)
